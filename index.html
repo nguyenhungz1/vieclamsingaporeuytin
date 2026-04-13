@@ -100,11 +100,28 @@ body {
 
 <body>
 
+<!-- TOP BAR -->
+<div style="background:#ff0000;color:white;text-align:center;padding:8px;font-weight:bold;">
+🔥 Hôm nay đã có 23 người đăng ký thành công
+</div>
+
 <div class="header">
   <h1>VIỆC LÀM SINGAPORE 24H</h1>
   <p>Uy tín - Nhanh chóng - Thu nhập cao</p>
   <a href="#form" class="btn">Đăng ký ngay</a>
 </div>
+
+<!-- VIEWERS -->
+<div style="text-align:center;color:red;font-weight:bold;margin-top:10px;">
+👁️ Có <span id="viewers">25</span> người đang xem
+</div>
+
+<script>
+setInterval(()=>{
+  document.getElementById("viewers").innerText =
+  Math.floor(Math.random()*20)+20;
+},3000);
+</script>
 
 <div class="section">
   <h2>🔥 Công việc đang tuyển</h2>
@@ -136,6 +153,15 @@ body {
   <p>✔ Hợp đồng rõ ràng</p>
 </div>
 
+<!-- LÝ DO -->
+<div class="section">
+  <h2>🎯 Vì sao nên đi Singapore ngay?</h2>
+  <p>✔ Lương cao hơn Việt Nam 2-3 lần</p>
+  <p>✔ Cơ hội đổi đời nhanh</p>
+  <p>✔ Nhiều người đã thành công</p>
+  <p>✔ Càng chần chừ càng mất cơ hội</p>
+</div>
+
 <!-- CHỐT KHÁCH -->
 <div class="section" style="background:#fff3cd;border-radius:15px;margin:20px;">
   <h2 style="color:red;">🔥 ĐĂNG KÝ NGAY - SỐ LƯỢNG CÓ HẠN</h2>
@@ -149,6 +175,31 @@ body {
   <h2>💬 Khách hàng nói gì</h2>
   <p>⭐⭐⭐⭐⭐ "Đi nhanh, uy tín" – Anh Nam</p>
   <p>⭐⭐⭐⭐⭐ "Có việc ngay" – Chị Hương</p>
+</div>
+
+<!-- COUNTDOWN -->
+<div class="section" style="background:#000;color:white;border-radius:15px;margin:20px;">
+  <h2>⏰ Ưu đãi kết thúc sau:</h2>
+  <h1 id="countdown">10:00</h1>
+</div>
+
+<script>
+let time = 600;
+setInterval(()=>{
+  let m = Math.floor(time/60);
+  let s = time%60;
+  document.getElementById("countdown").innerText =
+    m + ":" + (s<10?"0":"") + s;
+  if(time>0) time--;
+},1000);
+</script>
+
+<!-- CẢNH BÁO -->
+<div class="section" style="background:#ffe6e6;border-radius:15px;margin:20px;">
+  <h2 style="color:red;">⚠️ Cảnh báo lừa đảo</h2>
+  <p>❌ Không chuyển tiền khi chưa có hợp đồng</p>
+  <p>❌ Không làm việc với bên không rõ nguồn gốc</p>
+  <p>✔ Cam kết minh bạch, rõ ràng</p>
 </div>
 
 <div class="section">
@@ -167,16 +218,41 @@ body {
   <form action="https://formspree.io/f/xpqogqva" method="POST">
     <input type="text" name="name" placeholder="Họ tên" required>
     <input type="text" name="phone" placeholder="SĐT" required>
-    <button type="submit">Gửi</button>
+    <button type="submit" style="background:red;color:white;font-weight:bold;">
+      🚀 Nhận tư vấn ngay
+    </button>
   </form>
 </div>
+
+<!-- POPUP -->
+<div id="popup" style="
+position:fixed;
+bottom:20px;
+left:20px;
+background:white;
+padding:15px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+display:none;
+max-width:250px;
+z-index:999;
+">
+🔥 Có người vừa đăng ký<br><br>
+<a href="#form" style="color:red;font-weight:bold;">👉 Đăng ký ngay</a>
+</div>
+
+<script>
+setTimeout(()=>{
+  document.getElementById("popup").style.display="block";
+},5000);
+</script>
 
 <a href="tel:0967591139" class="call-btn">📞</a>
 <a href="https://zalo.me/0967591139" class="zalo-btn">💬</a>
 
 <div class="footer">
   <p>Hotline: 0967591139</p>
-  <p>100+ người đã xuất cảnh</p>
+  <p>500+ người đã xuất cảnh</p>
 </div>
 
 </body>
