@@ -12,7 +12,6 @@ body {
   background:#f5f7fb;
 }
 
-/* HEADER */
 .header {
   background: linear-gradient(45deg,#d60000,#ff3c3c);
   color:white;
@@ -21,8 +20,6 @@ body {
 }
 
 .header h1 {margin:0;font-size:36px;}
-.header p {margin-top:10px;}
-
 .btn {
   display:inline-block;
   margin-top:20px;
@@ -34,13 +31,11 @@ body {
   text-decoration:none;
 }
 
-/* SECTION */
 .section {
   padding:40px 20px;
   text-align:center;
 }
 
-/* JOB */
 .jobs {
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
@@ -59,24 +54,6 @@ body {
   height:150px;
   object-fit:cover;
   border-radius:10px;
-  transition:0.3s;
-}
-
-.job img:hover {
-  transform:scale(1.05);
-}
-
-.job p {
-  font-weight:bold;
-  margin-top:8px;
-}
-
-/* GALLERY */
-.gallery img {
-  width:100%;
-  height:250px;
-  object-fit:cover;
-  border-radius:10px;
 }
 
 .gallery {
@@ -85,14 +62,13 @@ body {
   gap:10px;
 }
 
-/* FORM */
-input, button {
-  padding:10px;
-  margin:5px;
-  width:90%;
+.gallery img {
+  width:100%;
+  height:250px;
+  object-fit:cover;
+  border-radius:10px;
 }
 
-/* FLOAT BUTTON */
 .call-btn {
   position:fixed;
   bottom:20px;
@@ -101,8 +77,6 @@ input, button {
   color:white;
   padding:15px;
   border-radius:50%;
-  font-size:20px;
-  text-decoration:none;
 }
 
 .zalo-btn {
@@ -113,10 +87,8 @@ input, button {
   color:white;
   padding:15px;
   border-radius:50%;
-  text-decoration:none;
 }
 
-/* FOOTER */
 .footer {
   background:#111;
   color:white;
@@ -128,69 +100,57 @@ input, button {
 
 <body>
 
-<!-- HEADER -->
 <div class="header">
   <h1>VIỆC LÀM SINGAPORE 24H</h1>
   <p>Uy tín - Nhanh chóng - Thu nhập cao</p>
   <a href="#form" class="btn">Đăng ký ngay</a>
 </div>
 
-<!-- JOB -->
 <div class="section">
   <h2>🔥 Công việc đang tuyển</h2>
-
   <div class="jobs">
 
-    <div class="job">
-      <img src="phubep.jpg">
-      <p>Phụ bếp</p>
-    </div>
-
-    <div class="job">
-      <img src="phucvu.jpg">
-      <p>Phục vụ nhà hàng</p>
-    </div>
-
-    <div class="job">
-      <img src="massage.jpg">
-      <p>Massage</p>
-    </div>
-
-    <div class="job">
-      <img src="nail.jpg">
-      <p>Spa - Nail - Mi</p>
-    </div>
-
-    <div class="job">
-      <img src="ruabat.jpg">
-      <p>Rửa bát</p>
-    </div>
-
-    <div class="job">
-      <img src="moc.jpg">
-      <p>Mộc nội thất</p>
-    </div>
-
-    <div class="job">
-      <img src="dondep.jpg">
-      <p>Dọn dẹp khách sạn</p>
-    </div>
-
-    <div class="job">
-      <img src="xaydung.jpg">
-      <p>Xây dựng</p>
-    </div>
+    <div class="job"><img src="phubep.jpg"><p>Phụ bếp</p></div>
+    <div class="job"><img src="phucvu.jpg"><p>Phục vụ nhà hàng</p></div>
+    <div class="job"><img src="massage.jpg"><p>Massage</p></div>
+    <div class="job"><img src="nail.jpg"><p>Spa - Nail - Mi</p></div>
+    <div class="job"><img src="ruabat.jpg"><p>Rửa bát</p></div>
+    <div class="job"><img src="moc.jpg"><p>Mộc nội thất</p></div>
+    <div class="job"><img src="dondep.jpg"><p>Dọn dẹp khách sạn</p></div>
+    <div class="job"><img src="xaydung.jpg"><p>Xây dựng</p></div>
 
   </div>
 </div>
 
-<!-- VISA -->
 <div class="section">
   <h2>🛂 Visa hỗ trợ</h2>
-  <p>SPass - Work Permit (WP) - TEP</p>
+  <p>SPass - WP - TEP</p>
 </div>
 
-<!-- GALLERY -->
+<!-- INFO -->
+<div class="section">
+  <h2>🇸🇬 Những điều cần biết</h2>
+  <p>✔ Tuổi 18-45, sức khỏe tốt</p>
+  <p>✔ Lương 30 - 45 triệu/tháng</p>
+  <p>✔ Có tăng ca, thưởng</p>
+  <p>✔ Hợp đồng rõ ràng</p>
+</div>
+
+<!-- CHỐT KHÁCH -->
+<div class="section" style="background:#fff3cd;border-radius:15px;margin:20px;">
+  <h2 style="color:red;">🔥 ĐĂNG KÝ NGAY - SỐ LƯỢNG CÓ HẠN</h2>
+  <p>⚠️ Mỗi tháng chỉ nhận 50 hồ sơ</p>
+  <p style="color:red;">🎁 Hỗ trợ miễn phí hồ sơ hôm nay</p>
+  <a href="#form" class="btn">GIỮ SUẤT NGAY</a>
+</div>
+
+<!-- FEEDBACK -->
+<div class="section">
+  <h2>💬 Khách hàng nói gì</h2>
+  <p>⭐⭐⭐⭐⭐ "Đi nhanh, uy tín" – Anh Nam</p>
+  <p>⭐⭐⭐⭐⭐ "Có việc ngay" – Chị Hương</p>
+</div>
+
 <div class="section">
   <h2>📸 Hình ảnh thực tế</h2>
   <div class="gallery">
@@ -202,25 +162,21 @@ input, button {
   </div>
 </div>
 
-<!-- FORM -->
 <div class="section" id="form">
-  <h2>📩 Đăng ký tư vấn miễn phí</h2>
-
+  <h2>📩 Đăng ký tư vấn</h2>
   <form action="https://formspree.io/f/xpqogqva" method="POST">
-    <input type="text" name="name" placeholder="Họ và tên" required>
-    <input type="text" name="phone" placeholder="Số điện thoại" required>
-    <button type="submit">Gửi thông tin</button>
+    <input type="text" name="name" placeholder="Họ tên" required>
+    <input type="text" name="phone" placeholder="SĐT" required>
+    <button type="submit">Gửi</button>
   </form>
 </div>
 
-<!-- BUTTON -->
 <a href="tel:0967591139" class="call-btn">📞</a>
 <a href="https://zalo.me/0967591139" class="zalo-btn">💬</a>
 
-<!-- FOOTER -->
 <div class="footer">
   <p>Hotline: 0967591139</p>
-  <p>100+ người đã xuất cảnh thành công</p>
+  <p>100+ người đã xuất cảnh</p>
 </div>
 
 </body>
