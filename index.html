@@ -12,30 +12,50 @@ body {
   background:#f5f7fb;
 }
 
+/* HEADER */
 .header {
   background: linear-gradient(45deg,#d60000,#ff3c3c);
   color:white;
   text-align:center;
-  padding:50px 20px;
+  padding:60px 20px;
 }
 
-.header h1 {margin:0;font-size:36px;}
+/* BUTTON */
 .btn {
   display:inline-block;
   margin-top:20px;
   padding:12px 25px;
-  background:yellow;
+  background:linear-gradient(45deg,#ffd700,#ffae00);
   color:black;
   font-weight:bold;
   border-radius:30px;
   text-decoration:none;
+  transition:0.3s;
+  animation: pulse 1.5s infinite;
+}
+.btn:hover {
+  transform:scale(1.1);
 }
 
+@keyframes pulse {
+  0% {transform:scale(1);}
+  50% {transform:scale(1.08);}
+  100% {transform:scale(1);}
+}
+
+/* SECTION */
 .section {
-  padding:40px 20px;
+  padding:50px 20px;
   text-align:center;
+  animation:fadeUp 1s ease;
 }
 
+@keyframes fadeUp {
+  from {opacity:0; transform:translateY(30px);}
+  to {opacity:1; transform:translateY(0);}
+}
+
+/* JOB */
 .jobs {
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
@@ -45,8 +65,14 @@ body {
 .job {
   background:white;
   padding:10px;
-  border-radius:10px;
+  border-radius:15px;
   box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+
+.job:hover {
+  transform:translateY(-7px);
+  box-shadow:0 15px 30px rgba(0,0,0,0.2);
 }
 
 .job img {
@@ -56,6 +82,7 @@ body {
   border-radius:10px;
 }
 
+/* GALLERY */
 .gallery {
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -69,6 +96,7 @@ body {
   border-radius:10px;
 }
 
+/* FLOAT BUTTON */
 .call-btn {
   position:fixed;
   bottom:20px;
@@ -87,40 +115,86 @@ body {
   color:white;
   padding:15px;
   border-radius:50%;
+  animation: rung 1s infinite;
 }
 
+@keyframes rung {
+  0%{transform:rotate(0)}
+  25%{transform:rotate(10deg)}
+  50%{transform:rotate(-10deg)}
+  100%{transform:rotate(0)}
+}
+
+/* FOOTER */
 .footer {
   background:#111;
   color:white;
   text-align:center;
   padding:20px;
 }
+
+html {scroll-behavior:smooth;}
 </style>
 </head>
 
 <body>
 
-<div style="background:#ff0000;color:white;text-align:center;padding:8px;font-weight:bold;">
-🔥 Hôm nay đã có 23 người đăng ký thành công
+<!-- LOADING -->
+<div id="loader" style="position:fixed;width:100%;height:100%;background:white;display:flex;justify-content:center;align-items:center;z-index:9999;font-size:20px;font-weight:bold;">
+🚀 Đang tải dữ liệu...
 </div>
 
-<div class="header">
+<!-- TOP BAR -->
+<div style="position:fixed;top:0;width:100%;background:red;color:white;text-align:center;padding:10px;font-weight:bold;z-index:999;">
+🔥 Hôm nay đã có 32 người đăng ký thành công
+</div>
+
+<div class="header" style="margin-top:40px;">
   <h1>VIỆC LÀM SINGAPORE 24H</h1>
   <p>Uy tín - Nhanh chóng - Thu nhập cao</p>
   <a href="#form" class="btn">Đăng ký ngay</a>
 </div>
 
+<!-- CHẠY CHỮ -->
+<marquee style="background:black;color:yellow;padding:8px;">
+🔥 Lương 30-45 triệu | ✈️ Xuất cảnh nhanh | 🎯 Tuyển gấp | 📞 0369759879
+</marquee>
+
+<!-- VIEW -->
 <div style="text-align:center;color:red;font-weight:bold;margin-top:10px;">
 👁️ Có <span id="viewers">25</span> người đang xem
 </div>
 
+<!-- SOLD -->
+<div style="text-align:center;color:green;font-weight:bold;margin-top:5px;">
+✅ Đã có <span id="sold">128</span> người đăng ký hôm nay
+</div>
+
 <script>
+window.onload = function(){
+  document.getElementById("loader").style.display="none";
+}
+
 setInterval(()=>{
   document.getElementById("viewers").innerText =
   Math.floor(Math.random()*20)+20;
 },3000);
+
+setInterval(()=>{
+  let el = document.getElementById("sold");
+  el.innerText = parseInt(el.innerText) + Math.floor(Math.random()*2);
+},5000);
 </script>
 
+<!-- VIDEO -->
+<div class="section">
+  <h2>🎬 Video thực tế</h2>
+  <video width="90%" controls autoplay muted loop style="border-radius:15px;">
+    <source src="video.mp4" type="video/mp4">
+  </video>
+</div>
+
+<!-- JOB -->
 <div class="section">
   <h2>🔥 Công việc đang tuyển</h2>
   <div class="jobs">
@@ -135,107 +209,50 @@ setInterval(()=>{
   </div>
 </div>
 
-<div class="section">
-  <h2>🛂 Visa hỗ trợ</h2>
-  <p>SPass - WP - TEP</p>
-</div>
+<!-- FORM -->
+<div class="section" id="form" style="background:#fff;border-radius:15px;margin:20px;">
 
-<div class="section">
-  <h2>🇸🇬 Những điều cần biết</h2>
-  <p>✔ Tuổi 18-45, sức khỏe tốt</p>
-  <p>✔ Lương 30 - 45 triệu/tháng</p>
-  <p>✔ Có tăng ca, thưởng</p>
-  <p>✔ Hợp đồng rõ ràng</p>
-</div>
+<h2 style="color:red;">🚀 ĐĂNG KÝ NGAY</h2>
 
-<div class="section" style="background:#e6f7ff;border-radius:15px;margin:20px;">
-  <h2>📚 Đào tạo ngoại ngữ trước khi xuất cảnh</h2>
-  <p>✔ Hỗ trợ đào tạo tiếng Trung & tiếng Anh</p>
-  <p>✔ Học từ cơ bản đến giao tiếp</p>
-  <p>✔ Tăng cơ hội trúng tuyển đơn lương cao</p>
-</div>
-
-<div class="section">
-  <h2>🎯 Vì sao nên đi Singapore ngay?</h2>
-  <p>✔ Lương cao hơn Việt Nam 2-3 lần</p>
-  <p>✔ Cơ hội đổi đời nhanh</p>
-  <p>✔ Nhiều người đã thành công</p>
-</div>
-
-<div class="section" style="background:#fff3cd;border-radius:15px;margin:20px;">
-  <h2 style="color:red;">🔥 ĐĂNG KÝ NGAY - SỐ LƯỢNG CÓ HẠN</h2>
-  <p>⚠️ Mỗi tháng chỉ nhận 50 hồ sơ</p>
-  <a href="#form" class="btn">GIỮ SUẤT NGAY</a>
-</div>
-
-<div class="section">
-  <h2>💬 Khách hàng nói gì</h2>
-  <p>⭐⭐⭐⭐⭐ "Đi nhanh, uy tín" – Anh Nam</p>
-  <p>⭐⭐⭐⭐⭐ "Có việc ngay" – Chị Hương</p>
-</div>
-
-<div class="section" style="background:#000;color:white;border-radius:15px;margin:20px;">
-  <h2>⏰ Ưu đãi kết thúc sau:</h2>
-  <h1 id="countdown">10:00</h1>
-</div>
-
-<script>
-let time = 600;
-setInterval(()=>{
-  let m = Math.floor(time/60);
-  let s = time%60;
-  document.getElementById("countdown").innerText =
-    m + ":" + (s<10?"0":"") + s;
-  if(time>0) time--;
-},1000);
-</script>
-
-<div class="section" style="background:#ffe6e6;border-radius:15px;margin:20px;">
-  <h2 style="color:red;">⚠️ Cảnh báo lừa đảo</h2>
-  <p>❌ Không chuyển tiền khi chưa có hợp đồng</p>
-  <p>✔ Cam kết minh bạch</p>
-</div>
-
-<div class="section">
-  <h2>📸 Hình ảnh thực tế</h2>
-  <div class="gallery">
-    <img src="anh1.jpg">
-    <img src="anh2.jpg">
-    <img src="anh3.jpg">
-    <img src="anh4.jpg">
-    <img src="anh5.jpg">
-  </div>
-</div>
-
-<div class="section" id="form" style="background:#ffffff;border-radius:15px;margin:20px;box-shadow:0 5px 15px rgba(0,0,0,0.1);">
-
-<div style="background:#ff0000;color:white;padding:15px;border-radius:10px;margin-bottom:15px;">
-<b>⚠️ CHỈ CÒN 7 SUẤT CUỐI HÔM NAY</b><br>
-⏳ Đăng ký ngay để giữ chỗ
-</div>
-
-<h2 style="color:#d60000;">📩 Đăng ký tư vấn miễn phí</h2>
+<p style="color:red;font-weight:bold;">
+⚠️ Chỉ còn <span id="slot">7</span> suất hôm nay
+</p>
 
 <form action="https://formspree.io/f/xpqogqva" method="POST">
-<input type="text" name="name" placeholder="Họ và tên" required style="width:90%;padding:12px;margin:8px;">
-<input type="text" name="phone" placeholder="Số điện thoại" required style="width:90%;padding:12px;margin:8px;">
-<button type="submit" style="width:95%;padding:12px;background:red;color:white;font-weight:bold;border:none;">
-🚀 Gửi ngay
+<input type="text" name="name" placeholder="👤 Họ và tên" required style="width:90%;padding:12px;margin:8px;">
+<input type="text" name="phone" placeholder="📱 SĐT" required style="width:90%;padding:12px;margin:8px;">
+<button type="submit" style="width:95%;padding:15px;background:red;color:white;font-weight:bold;">
+🔥 GIỮ SUẤT NGAY
 </button>
 </form>
 
 </div>
 
-<div id="popup" style="position:fixed;bottom:20px;left:20px;background:white;padding:15px;border-radius:10px;display:none;">
-🔥 Có người vừa đăng ký
-</div>
+<script>
+setInterval(()=>{
+  document.getElementById("slot").innerText =
+  Math.floor(Math.random()*5)+3;
+},4000);
+
+setTimeout(()=>{
+  document.getElementById("form").scrollIntoView({behavior:"smooth"});
+},15000);
+</script>
+
+<!-- POPUP -->
+<div id="popup" style="position:fixed;bottom:20px;left:20px;background:white;padding:15px;border-radius:10px;display:none;"></div>
 
 <script>
-setTimeout(()=>{document.getElementById("popup").style.display="block";},5000);
+const names=["Nam","Huy","Linh","Tuấn","An","Dũng"];
+const cities=["Hà Nội","HCM","Đà Nẵng"];
+
 setInterval(()=>{
-const names=["Nam","Huy","Linh","Tuấn"];
-document.getElementById("popup").innerHTML="🔥 "+names[Math.floor(Math.random()*names.length)]+" vừa đăng ký";
-},8000);
+  let name=names[Math.floor(Math.random()*names.length)];
+  let city=cities[Math.floor(Math.random()*cities.length)];
+  document.getElementById("popup").innerHTML =
+  "🔥 "+name+" ("+city+") vừa đăng ký";
+  document.getElementById("popup").style.display="block";
+},4000);
 </script>
 
 <a href="tel:0369759879" class="call-btn">📞</a>
