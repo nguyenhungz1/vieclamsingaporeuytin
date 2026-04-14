@@ -31,16 +31,9 @@ body {
   border-radius:30px;
   text-decoration:none;
   transition:0.3s;
-  animation: pulse 1.5s infinite;
 }
 .btn:hover {
   transform:scale(1.1);
-}
-
-@keyframes pulse {
-  0% {transform:scale(1);}
-  50% {transform:scale(1.08);}
-  100% {transform:scale(1);}
 }
 
 /* SECTION */
@@ -133,16 +126,12 @@ body {
   padding:20px;
 }
 
+/* SMOOTH */
 html {scroll-behavior:smooth;}
 </style>
 </head>
 
 <body>
-
-<!-- LOADING -->
-<div id="loader" style="position:fixed;width:100%;height:100%;background:white;display:flex;justify-content:center;align-items:center;z-index:9999;font-size:20px;font-weight:bold;">
-🚀 Đang tải dữ liệu...
-</div>
 
 <!-- TOP BAR -->
 <div style="position:fixed;top:0;width:100%;background:red;color:white;text-align:center;padding:10px;font-weight:bold;z-index:999;">
@@ -155,35 +144,16 @@ html {scroll-behavior:smooth;}
   <a href="#form" class="btn">Đăng ký ngay</a>
 </div>
 
-<!-- CHẠY CHỮ -->
-<marquee style="background:black;color:yellow;padding:8px;">
-🔥 Lương 30-45 triệu | ✈️ Xuất cảnh nhanh | 🎯 Tuyển gấp | 📞 0369759879
-</marquee>
-
 <!-- VIEW -->
 <div style="text-align:center;color:red;font-weight:bold;margin-top:10px;">
 👁️ Có <span id="viewers">25</span> người đang xem
 </div>
 
-<!-- SOLD -->
-<div style="text-align:center;color:green;font-weight:bold;margin-top:5px;">
-✅ Đã có <span id="sold">128</span> người đăng ký hôm nay
-</div>
-
 <script>
-window.onload = function(){
-  document.getElementById("loader").style.display="none";
-}
-
 setInterval(()=>{
   document.getElementById("viewers").innerText =
   Math.floor(Math.random()*20)+20;
 },3000);
-
-setInterval(()=>{
-  let el = document.getElementById("sold");
-  el.innerText = parseInt(el.innerText) + Math.floor(Math.random()*2);
-},5000);
 </script>
 
 <!-- VIDEO -->
@@ -207,6 +177,22 @@ setInterval(()=>{
     <div class="job"><img src="dondep.jpg"><p>Dọn dẹp khách sạn</p></div>
     <div class="job"><img src="xaydung.jpg"><p>Xây dựng</p></div>
   </div>
+</div>
+
+<!-- INFO -->
+<div class="section">
+  <h2>🇸🇬 Những điều cần biết</h2>
+  <p>✔ Tuổi 18-45, sức khỏe tốt</p>
+  <p>✔ Lương 30 - 45 triệu/tháng</p>
+  <p>✔ Có tăng ca, thưởng</p>
+</div>
+
+<!-- CAM KẾT -->
+<div class="section" style="background:#fff;border-radius:15px;margin:20px;">
+  <h2 style="color:red;">🔒 Cam kết</h2>
+  <p>✔ Không phát sinh chi phí</p>
+  <p>✔ Có hợp đồng rõ ràng</p>
+  <p>✔ Hỗ trợ đến khi có việc</p>
 </div>
 
 <!-- FORM -->
@@ -233,17 +219,14 @@ setInterval(()=>{
   document.getElementById("slot").innerText =
   Math.floor(Math.random()*5)+3;
 },4000);
-
-setTimeout(()=>{
-  document.getElementById("form").scrollIntoView({behavior:"smooth"});
-},15000);
 </script>
 
 <!-- POPUP -->
-<div id="popup" style="position:fixed;bottom:20px;left:20px;background:white;padding:15px;border-radius:10px;display:none;"></div>
+<div id="popup" style="position:fixed;bottom:20px;left:20px;background:white;padding:15px;border-radius:10px;display:none;">
+</div>
 
 <script>
-const names=["Nam","Huy","Linh","Tuấn","An","Dũng"];
+const names=["Nam","Huy","Linh","Tuấn"];
 const cities=["Hà Nội","HCM","Đà Nẵng"];
 
 setInterval(()=>{
@@ -252,7 +235,7 @@ setInterval(()=>{
   document.getElementById("popup").innerHTML =
   "🔥 "+name+" ("+city+") vừa đăng ký";
   document.getElementById("popup").style.display="block";
-},4000);
+},5000);
 </script>
 
 <a href="tel:0369759879" class="call-btn">📞</a>
