@@ -308,6 +308,99 @@ document.getElementById("popup").innerHTML="🔥 "+names[Math.floor(Math.random(
   <p>Hotline: 0369759879</p>
   <p>1000+ người đã xuất cảnh</p>
 </div>
+<!-- ================= AUTO CHỐT KHÁCH LEVEL MAX ================= -->
+
+<!-- CHAT BOX GIẢ -->
+<div id="chatbox" style="
+position:fixed;
+bottom:90px;
+right:20px;
+width:260px;
+background:white;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+overflow:hidden;
+font-size:14px;
+z-index:999;
+">
+
+<div style="background:#0084ff;color:white;padding:10px;">
+💬 Tư vấn nhanh
+</div>
+
+<div id="chat-content" style="padding:10px;height:150px;overflow-y:auto;">
+</div>
+
+<div style="display:flex;border-top:1px solid #ddd;">
+<input id="chat-input" placeholder="Nhập câu hỏi..." style="flex:1;padding:8px;border:none;">
+<button onclick="sendMsg()" style="background:#0084ff;color:white;border:none;padding:8px;">Gửi</button>
+</div>
+
+</div>
+
+<script>
+// FAKE CHAT AUTO
+const messages = [
+"Chào bạn 👋",
+"Bạn muốn đi Singapore phải không?",
+"Bên mình đang có đơn lương 40tr+",
+"Bạn để lại SĐT để mình gọi tư vấn nhé 🔥"
+];
+
+let i=0;
+setInterval(()=>{
+let box = document.getElementById("chat-content");
+if(box && i < messages.length){
+box.innerHTML += "<div>"+messages[i]+"</div>";
+box.scrollTop = box.scrollHeight;
+i++;
+}
+},2000);
+
+// USER CHAT
+function sendMsg(){
+let input = document.getElementById("chat-input");
+let box = document.getElementById("chat-content");
+if(input.value.trim() !== ""){
+box.innerHTML += "<div style='text-align:right;color:blue;'>"+input.value+"</div>";
+box.innerHTML += "<div>👉 Để lại SĐT ở form bên dưới nhé</div>";
+input.value="";
+box.scrollTop = box.scrollHeight;
+}
+}
+</script>
+
+<!-- AUTO SCROLL VỀ FORM -->
+<script>
+setTimeout(()=>{
+let form = document.getElementById("form");
+if(form){
+form.scrollIntoView({behavior:"smooth"});
+}
+},15000);
+</script>
+
+<!-- RUNG NÚT GỌI -->
+<style>
+.call-btn{
+animation: rung2 1s infinite;
+}
+@keyframes rung2{
+0%{transform:scale(1)}
+50%{transform:scale(1.2)}
+100%{transform:scale(1)}
+}
+</style>
+
+<!-- NOTIFY ÂM THANH -->
+<audio id="ding" src="https://www.soundjay.com/buttons/sounds/button-3.mp3"></audio>
+
+<script>
+setInterval(()=>{
+let audio=document.getElementById("ding");
+if(audio) audio.play();
+},20000);
+</script>
 
 </body>
 </html>
