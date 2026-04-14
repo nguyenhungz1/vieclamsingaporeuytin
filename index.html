@@ -6,10 +6,20 @@
 <title>Việc Làm Singapore 24H</title>
 
 <style>
+
+/* NỀN CHUYỂN ĐỘNG */
 body {
   margin:0;
   font-family: Arial;
-  background:#f5f7fb;
+  background: linear-gradient(-45deg, #f5f7fb, #e3f2fd, #fff, #fce4ec);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% {background-position:0% 50%;}
+  50% {background-position:100% 50%;}
+  100% {background-position:0% 50%;}
 }
 
 /* HEADER */
@@ -31,9 +41,18 @@ body {
   border-radius:30px;
   text-decoration:none;
   transition:0.3s;
+  animation: pulse 1.5s infinite;
 }
+
 .btn:hover {
   transform:scale(1.1);
+}
+
+/* HIỆU ỨNG NHẤP NHÁY */
+@keyframes pulse {
+  0% {transform:scale(1);}
+  50% {transform:scale(1.08);}
+  100% {transform:scale(1);}
 }
 
 /* SECTION */
@@ -98,6 +117,7 @@ body {
   color:white;
   padding:15px;
   border-radius:50%;
+  animation: rung 1s infinite;
 }
 
 .zalo-btn {
@@ -126,19 +146,39 @@ body {
   padding:20px;
 }
 
-/* SMOOTH */
 html {scroll-behavior:smooth;}
+
 </style>
 </head>
 
 <body>
+
+<!-- LOADING -->
+<div id="loader" style="
+position:fixed;
+width:100%;
+height:100%;
+background:white;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+font-size:20px;
+font-weight:bold;
+">
+🚀 Đang tải dữ liệu...
+</div>
 
 <!-- TOP BAR -->
 <div style="position:fixed;top:0;width:100%;background:red;color:white;text-align:center;padding:10px;font-weight:bold;z-index:999;">
 🔥 Hôm nay đã có 32 người đăng ký thành công
 </div>
 
-<div class="header" style="margin-top:40px;">
+<marquee style="background:black;color:yellow;padding:8px;margin-top:40px;">
+🔥 Lương 30-45 triệu | ✈️ Xuất cảnh nhanh | 🎯 Tuyển gấp 50 người | 📞 0369759879
+</marquee>
+
+<div class="header">
   <h1>VIỆC LÀM SINGAPORE 24H</h1>
   <p>Uy tín - Nhanh chóng - Thu nhập cao</p>
   <a href="#form" class="btn">Đăng ký ngay</a>
@@ -179,22 +219,6 @@ setInterval(()=>{
   </div>
 </div>
 
-<!-- INFO -->
-<div class="section">
-  <h2>🇸🇬 Những điều cần biết</h2>
-  <p>✔ Tuổi 18-45, sức khỏe tốt</p>
-  <p>✔ Lương 30 - 45 triệu/tháng</p>
-  <p>✔ Có tăng ca, thưởng</p>
-</div>
-
-<!-- CAM KẾT -->
-<div class="section" style="background:#fff;border-radius:15px;margin:20px;">
-  <h2 style="color:red;">🔒 Cam kết</h2>
-  <p>✔ Không phát sinh chi phí</p>
-  <p>✔ Có hợp đồng rõ ràng</p>
-  <p>✔ Hỗ trợ đến khi có việc</p>
-</div>
-
 <!-- FORM -->
 <div class="section" id="form" style="background:#fff;border-radius:15px;margin:20px;">
 
@@ -214,28 +238,38 @@ setInterval(()=>{
 
 </div>
 
+<!-- POPUP -->
+<div id="popup" style="position:fixed;bottom:20px;left:20px;background:white;padding:15px;border-radius:10px;display:none;"></div>
+
 <script>
+window.onload = function(){
+  document.getElementById("loader").style.display="none";
+}
+
 setInterval(()=>{
   document.getElementById("slot").innerText =
   Math.floor(Math.random()*5)+3;
 },4000);
-</script>
 
-<!-- POPUP -->
-<div id="popup" style="position:fixed;bottom:20px;left:20px;background:white;padding:15px;border-radius:10px;display:none;">
-</div>
-
-<script>
-const names=["Nam","Huy","Linh","Tuấn"];
+const names=["Nam","Huy","Linh","Tuấn","An"];
 const cities=["Hà Nội","HCM","Đà Nẵng"];
 
 setInterval(()=>{
   let name=names[Math.floor(Math.random()*names.length)];
   let city=cities[Math.floor(Math.random()*cities.length)];
-  document.getElementById("popup").innerHTML =
-  "🔥 "+name+" ("+city+") vừa đăng ký";
-  document.getElementById("popup").style.display="block";
+
+  let popup = document.getElementById("popup");
+
+  popup.innerHTML = "🔥 "+name+" ("+city+") vừa đăng ký";
+  popup.style.display="block";
+
 },5000);
+
+// AUTO SCROLL
+setTimeout(()=>{
+  document.getElementById("form").scrollIntoView({behavior:"smooth"});
+},15000);
+
 </script>
 
 <a href="tel:0369759879" class="call-btn">📞</a>
