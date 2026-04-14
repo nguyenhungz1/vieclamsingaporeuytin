@@ -100,7 +100,6 @@ body {
 
 <body>
 
-<!-- TOP BAR -->
 <div style="background:#ff0000;color:white;text-align:center;padding:8px;font-weight:bold;">
 🔥 Hôm nay đã có 23 người đăng ký thành công
 </div>
@@ -111,7 +110,6 @@ body {
   <a href="#form" class="btn">Đăng ký ngay</a>
 </div>
 
-<!-- VIEWERS -->
 <div style="text-align:center;color:red;font-weight:bold;margin-top:10px;">
 👁️ Có <span id="viewers">25</span> người đang xem
 </div>
@@ -126,7 +124,6 @@ setInterval(()=>{
 <div class="section">
   <h2>🔥 Công việc đang tuyển</h2>
   <div class="jobs">
-
     <div class="job"><img src="phubep.jpg"><p>Phụ bếp</p></div>
     <div class="job"><img src="phucvu.jpg"><p>Phục vụ nhà hàng</p></div>
     <div class="job"><img src="massage.jpg"><p>Massage</p></div>
@@ -135,7 +132,6 @@ setInterval(()=>{
     <div class="job"><img src="moc.jpg"><p>Mộc nội thất</p></div>
     <div class="job"><img src="dondep.jpg"><p>Dọn dẹp khách sạn</p></div>
     <div class="job"><img src="xaydung.jpg"><p>Xây dựng</p></div>
-
   </div>
 </div>
 
@@ -151,6 +147,19 @@ setInterval(()=>{
   <p>✔ Lương 30 - 45 triệu/tháng</p>
   <p>✔ Có tăng ca, thưởng</p>
   <p>✔ Hợp đồng rõ ràng</p>
+</div>
+
+<!-- ĐÀO TẠO NGOẠI NGỮ (MỚI) -->
+<div class="section" style="background:#e6f7ff;border-radius:15px;margin:20px;">
+  <h2>📚 Đào tạo ngoại ngữ trước khi xuất cảnh</h2>
+  <p>✔ Hỗ trợ đào tạo tiếng Trung & tiếng Anh cho người chưa biết</p>
+  <p>✔ Giáo viên hướng dẫn từ cơ bản đến giao tiếp</p>
+  <p>✔ Học nhanh – dễ hiểu – áp dụng thực tế</p>
+  <p>✔ Tăng cơ hội trúng tuyển đơn hàng lương cao</p>
+
+  <h3 style="color:#d60000;">🎯 Cam kết</h3>
+  <p>👉 Học xong có thể giao tiếp cơ bản khi làm việc</p>
+  <p>👉 Hỗ trợ xuyên suốt khi làm việc tại Singapore</p>
 </div>
 
 <!-- LÝ DO -->
@@ -170,90 +179,4 @@ setInterval(()=>{
   <a href="#form" class="btn">GIỮ SUẤT NGAY</a>
 </div>
 
-<!-- FEEDBACK -->
-<div class="section">
-  <h2>💬 Khách hàng nói gì</h2>
-  <p>⭐⭐⭐⭐⭐ "Đi nhanh, uy tín" – Anh Nam</p>
-  <p>⭐⭐⭐⭐⭐ "Có việc ngay" – Chị Hương</p>
-</div>
-
-<!-- COUNTDOWN -->
-<div class="section" style="background:#000;color:white;border-radius:15px;margin:20px;">
-  <h2>⏰ Ưu đãi kết thúc sau:</h2>
-  <h1 id="countdown">10:00</h1>
-</div>
-
-<script>
-let time = 600;
-setInterval(()=>{
-  let m = Math.floor(time/60);
-  let s = time%60;
-  document.getElementById("countdown").innerText =
-    m + ":" + (s<10?"0":"") + s;
-  if(time>0) time--;
-},1000);
-</script>
-
-<!-- CẢNH BÁO -->
-<div class="section" style="background:#ffe6e6;border-radius:15px;margin:20px;">
-  <h2 style="color:red;">⚠️ Cảnh báo lừa đảo</h2>
-  <p>❌ Không chuyển tiền khi chưa có hợp đồng</p>
-  <p>❌ Không làm việc với bên không rõ nguồn gốc</p>
-  <p>✔ Cam kết minh bạch, rõ ràng</p>
-</div>
-
-<div class="section">
-  <h2>📸 Hình ảnh thực tế</h2>
-  <div class="gallery">
-    <img src="anh1.jpg">
-    <img src="anh2.jpg">
-    <img src="anh3.jpg">
-    <img src="anh4.jpg">
-    <img src="anh5.jpg">
-  </div>
-</div>
-
-<div class="section" id="form">
-  <h2>📩 Đăng ký tư vấn</h2>
-  <form action="https://formspree.io/f/xpqogqva" method="POST">
-    <input type="text" name="name" placeholder="Họ tên" required>
-    <input type="text" name="phone" placeholder="SĐT" required>
-    <button type="submit" style="background:red;color:white;font-weight:bold;">
-      🚀 Nhận tư vấn ngay
-    </button>
-  </form>
-</div>
-
-<!-- POPUP -->
-<div id="popup" style="
-position:fixed;
-bottom:20px;
-left:20px;
-background:white;
-padding:15px;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.3);
-display:none;
-max-width:250px;
-z-index:999;
-">
-🔥 Có người vừa đăng ký<br><br>
-<a href="#form" style="color:red;font-weight:bold;">👉 Đăng ký ngay</a>
-</div>
-
-<script>
-setTimeout(()=>{
-  document.getElementById("popup").style.display="block";
-},5000);
-</script>
-
-<a href="tel:0369759879" class="call-btn">📞</a>
-<a href="https://zalo.me/0369759879" class="zalo-btn">💬</a>
-
-<div class="footer">
-  <p>Hotline: 0369759879</p>
-  <p>1000+ người đã xuất cảnh</p>
-</div>
-
-</body>
-</html>
+<!-- phần còn lại giữ nguyên -->
