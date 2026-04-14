@@ -17,10 +17,8 @@ body {
   background: linear-gradient(45deg,#d60000,#ff3c3c);
   color:white;
   text-align:center;
-  padding:50px 20px;
+  padding:60px 20px;
 }
-
-.header h1 {margin:0;font-size:36px;}
 
 /* BUTTON */
 .btn {
@@ -40,8 +38,14 @@ body {
 
 /* SECTION */
 .section {
-  padding:40px 20px;
+  padding:50px 20px;
   text-align:center;
+  animation:fadeUp 1s ease;
+}
+
+@keyframes fadeUp {
+  from {opacity:0; transform:translateY(30px);}
+  to {opacity:1; transform:translateY(0);}
 }
 
 /* JOB */
@@ -104,6 +108,14 @@ body {
   color:white;
   padding:15px;
   border-radius:50%;
+  animation: rung 1s infinite;
+}
+
+@keyframes rung {
+  0%{transform:rotate(0)}
+  25%{transform:rotate(10deg)}
+  50%{transform:rotate(-10deg)}
+  100%{transform:rotate(0)}
 }
 
 /* FOOTER */
@@ -121,16 +133,18 @@ html {scroll-behavior:smooth;}
 
 <body>
 
-<div style="background:#ff0000;color:white;text-align:center;padding:8px;font-weight:bold;">
-🔥 Hôm nay đã có 23 người đăng ký thành công
+<!-- TOP BAR -->
+<div style="position:fixed;top:0;width:100%;background:red;color:white;text-align:center;padding:10px;font-weight:bold;z-index:999;">
+🔥 Hôm nay đã có 32 người đăng ký thành công
 </div>
 
-<div class="header">
+<div class="header" style="margin-top:40px;">
   <h1>VIỆC LÀM SINGAPORE 24H</h1>
   <p>Uy tín - Nhanh chóng - Thu nhập cao</p>
   <a href="#form" class="btn">Đăng ký ngay</a>
 </div>
 
+<!-- VIEW -->
 <div style="text-align:center;color:red;font-weight:bold;margin-top:10px;">
 👁️ Có <span id="viewers">25</span> người đang xem
 </div>
@@ -141,6 +155,14 @@ setInterval(()=>{
   Math.floor(Math.random()*20)+20;
 },3000);
 </script>
+
+<!-- VIDEO -->
+<div class="section">
+  <h2>🎬 Video thực tế</h2>
+  <video width="90%" controls autoplay muted loop style="border-radius:15px;">
+    <source src="video.mp4" type="video/mp4">
+  </video>
+</div>
 
 <!-- JOB -->
 <div class="section">
@@ -157,148 +179,63 @@ setInterval(()=>{
   </div>
 </div>
 
-<!-- VISA -->
-<div class="section">
-  <h2>🛂 Visa hỗ trợ</h2>
-  <p>SPass - WP - TEP</p>
-</div>
-
 <!-- INFO -->
 <div class="section">
   <h2>🇸🇬 Những điều cần biết</h2>
   <p>✔ Tuổi 18-45, sức khỏe tốt</p>
   <p>✔ Lương 30 - 45 triệu/tháng</p>
   <p>✔ Có tăng ca, thưởng</p>
-  <p>✔ Hợp đồng rõ ràng</p>
-
-  <!-- CAM KẾT -->
-  <div style="background:#fff;border-radius:15px;padding:20px;margin-top:20px;box-shadow:0 5px 15px rgba(0,0,0,0.1);">
-    <h3>✅ Cam kết của chúng tôi</h3>
-    <p>✔ Có hợp đồng rõ ràng trước khi đi</p>
-    <p>✔ Không phát sinh chi phí</p>
-    <p>✔ Hỗ trợ đến khi có việc</p>
-    <p>✔ Minh bạch - uy tín</p>
-  </div>
 </div>
 
-<!-- NGOẠI NGỮ -->
-<div class="section" style="background:#e6f7ff;border-radius:15px;margin:20px;">
-  <h2>📚 Đào tạo ngoại ngữ trước khi xuất cảnh</h2>
-  <p>✔ Hỗ trợ đào tạo tiếng Trung & tiếng Anh</p>
-  <p>✔ Học từ cơ bản đến giao tiếp</p>
-  <p>✔ Tăng cơ hội trúng tuyển đơn lương cao</p>
-</div>
-
-<!-- LÝ DO -->
-<div class="section">
-  <h2>🎯 Vì sao nên đi Singapore ngay?</h2>
-  <p>✔ Lương cao hơn Việt Nam 2-3 lần</p>
-  <p>✔ Cơ hội đổi đời nhanh</p>
-  <p>✔ Nhiều người đã thành công</p>
-</div>
-
-<!-- CTA -->
-<div class="section" style="background:#fff3cd;border-radius:15px;margin:20px;">
-  <h2 style="color:red;">🔥 ĐĂNG KÝ NGAY - SỐ LƯỢNG CÓ HẠN</h2>
-  <p>⚠️ Mỗi tháng chỉ nhận 50 hồ sơ</p>
-  <a href="#form" class="btn">GIỮ SUẤT NGAY</a>
-</div>
-
-<!-- FEEDBACK -->
-<div class="section">
-  <h2>💬 Khách hàng nói gì</h2>
-  <p>⭐⭐⭐⭐⭐ "Đi nhanh, uy tín" – Anh Nam</p>
-  <p>⭐⭐⭐⭐⭐ "Có việc ngay" – Chị Hương</p>
-</div>
-
-<!-- COUNTDOWN -->
-<div class="section" style="background:#000;color:white;border-radius:15px;margin:20px;">
-  <h2>⏰ Ưu đãi kết thúc sau:</h2>
-  <h1 id="countdown">10:00</h1>
-</div>
-
-<script>
-let time = 600;
-setInterval(()=>{
-  let m = Math.floor(time/60);
-  let s = time%60;
-  document.getElementById("countdown").innerText =
-    m + ":" + (s<10?"0":"") + s;
-  if(time>0) time--;
-},1000);
-</script>
-
-<!-- CẢNH BÁO -->
-<div class="section" style="background:#ffe6e6;border-radius:15px;margin:20px;">
-  <h2 style="color:red;">⚠️ Cảnh báo lừa đảo</h2>
-  <p>❌ Không chuyển tiền khi chưa có hợp đồng</p>
-  <p>✔ Cam kết minh bạch</p>
-</div>
-
-<!-- GALLERY -->
-<div class="section">
-  <h2>📸 Hình ảnh thực tế</h2>
-  <div class="gallery">
-    <img src="anh1.jpg">
-    <img src="anh2.jpg">
-    <img src="anh3.jpg">
-    <img src="anh4.jpg">
-    <img src="anh5.jpg">
-  </div>
-</div>
-
-<!-- QUY TRÌNH -->
-<div class="section">
-  <h2>📋 Quy trình đi Singapore</h2>
-  <p>1️⃣ Đăng ký tư vấn</p>
-  <p>2️⃣ Chọn đơn phù hợp</p>
-  <p>3️⃣ Đào tạo (nếu cần)</p>
-  <p>4️⃣ Ký hợp đồng</p>
-  <p>5️⃣ Xuất cảnh</p>
+<!-- CAM KẾT -->
+<div class="section" style="background:#fff;border-radius:15px;margin:20px;">
+  <h2 style="color:red;">🔒 Cam kết</h2>
+  <p>✔ Không phát sinh chi phí</p>
+  <p>✔ Có hợp đồng rõ ràng</p>
+  <p>✔ Hỗ trợ đến khi có việc</p>
 </div>
 
 <!-- FORM -->
-<div class="section" id="form" style="background:#ffffff;border-radius:15px;margin:20px;box-shadow:0 5px 15px rgba(0,0,0,0.1);">
+<div class="section" id="form" style="background:#fff;border-radius:15px;margin:20px;">
 
-<div style="background:#ff0000;color:white;padding:15px;border-radius:10px;margin-bottom:15px;">
-<b>⚠️ CHỈ CÒN 7 SUẤT CUỐI HÔM NAY</b><br>
-⏳ Đăng ký ngay để giữ chỗ
-</div>
+<h2 style="color:red;">🚀 ĐĂNG KÝ NGAY</h2>
 
-<h2 style="color:#d60000;">📩 Đăng ký tư vấn miễn phí</h2>
+<p style="color:red;font-weight:bold;">
+⚠️ Chỉ còn <span id="slot">7</span> suất hôm nay
+</p>
 
 <form action="https://formspree.io/f/xpqogqva" method="POST">
-<input type="text" name="name" placeholder="Họ và tên" required style="width:90%;padding:12px;margin:8px;">
-<input type="text" name="phone" placeholder="Số điện thoại" required style="width:90%;padding:12px;margin:8px;">
-<button type="submit" style="width:95%;padding:12px;background:red;color:white;font-weight:bold;border:none;">
-🚀 Gửi ngay
+<input type="text" name="name" placeholder="👤 Họ và tên" required style="width:90%;padding:12px;margin:8px;">
+<input type="text" name="phone" placeholder="📱 SĐT" required style="width:90%;padding:12px;margin:8px;">
+<button type="submit" style="width:95%;padding:15px;background:red;color:white;font-weight:bold;">
+🔥 GIỮ SUẤT NGAY
 </button>
 </form>
 
 </div>
 
+<script>
+setInterval(()=>{
+  document.getElementById("slot").innerText =
+  Math.floor(Math.random()*5)+3;
+},4000);
+</script>
+
 <!-- POPUP -->
-<div id="popup" style="
-position:fixed;
-bottom:20px;
-left:20px;
-background:white;
-padding:15px;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.3);
-display:none;
-max-width:250px;
-z-index:999;
-">
-🔥 Có người vừa đăng ký
+<div id="popup" style="position:fixed;bottom:20px;left:20px;background:white;padding:15px;border-radius:10px;display:none;">
 </div>
 
 <script>
-setTimeout(()=>{document.getElementById("popup").style.display="block";},5000);
-setInterval(()=>{
 const names=["Nam","Huy","Linh","Tuấn"];
-document.getElementById("popup").innerHTML="🔥 "+names[Math.floor(Math.random()*names.length)]+" vừa đăng ký";
-},8000);
+const cities=["Hà Nội","HCM","Đà Nẵng"];
+
+setInterval(()=>{
+  let name=names[Math.floor(Math.random()*names.length)];
+  let city=cities[Math.floor(Math.random()*cities.length)];
+  document.getElementById("popup").innerHTML =
+  "🔥 "+name+" ("+city+") vừa đăng ký";
+  document.getElementById("popup").style.display="block";
+},5000);
 </script>
 
 <a href="tel:0369759879" class="call-btn">📞</a>
