@@ -300,6 +300,17 @@ const names=["Nam","Huy","Linh","Tuấn"];
 document.getElementById("popup").innerHTML="🔥 "+names[Math.floor(Math.random()*names.length)]+" vừa đăng ký";
 },8000);
 </script>
+  <script>
+const form2 = document.querySelector("form");
+
+if(form2){
+form2.addEventListener("submit", ()=>{
+setTimeout(()=>{
+alert("🔥 Đăng ký thành công! Bên mình sẽ gọi ngay cho bạn trong 5 phút!");
+},500);
+});
+}
+</script>
 
 <a href="tel:0369759879" class="call-btn">📞</a>
 <a href="https://zalo.me/0369759879" class="zalo-btn">💬</a>
@@ -403,4 +414,34 @@ if(audio) audio.play();
 </script>
 
 </body>
+  <!-- ================= GỬI DATA VỀ TELEGRAM ================= -->
+
+<script>
+const TOKEN = "8791606831:AAF03TxBZoCOY4NNJXgiGTndV6PW1KDxvdY";
+const CHAT_ID = "5102693667";
+
+const form = document.querySelector("form");
+
+if(form){
+form.addEventListener("submit", function(e){
+
+const name = form.querySelector("input[name='name']").value;
+const phone = form.querySelector("input[name='phone']").value;
+
+const text = "🔥 KHÁCH MỚI\n\n👤 " + name + "\n📱 " + phone + "\n🌐 Website";
+
+fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`, {
+method: "POST",
+headers: {"Content-Type": "application/json"},
+body: JSON.stringify({
+chat_id: CHAT_ID,
+text: text
+})
+});
+
+});
+}
+</script>
+
+<!-- ================= END ================= -->
 </html>
