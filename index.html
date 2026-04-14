@@ -12,69 +12,28 @@ body {
   background:#f5f7fb;
 }
 
-/* MENU */
-.navbar {
-  position:fixed;
-  top:0;
-  width:100%;
-  background:white;
-  box-shadow:0 2px 10px rgba(0,0,0,0.1);
-  display:flex;
-  justify-content:space-between;
-  padding:10px 20px;
-  z-index:1000;
-}
-
-.navbar a {
-  text-decoration:none;
-  color:#333;
-  font-weight:bold;
-  margin:0 10px;
-}
-
-/* HEADER */
 .header {
-  margin-top:60px;
-  background:url('anh1.jpg') center/cover;
+  background: linear-gradient(45deg,#d60000,#ff3c3c);
   color:white;
   text-align:center;
-  padding:100px 20px;
+  padding:50px 20px;
 }
 
-.header h1 {
-  font-size:40px;
-  text-shadow:2px 2px 10px rgba(0,0,0,0.7);
-}
-
+.header h1 {margin:0;font-size:36px;}
 .btn {
   display:inline-block;
   margin-top:20px;
   padding:12px 25px;
-  background:linear-gradient(45deg,#ffd700,#ffae00);
+  background:yellow;
   color:black;
   font-weight:bold;
   border-radius:30px;
   text-decoration:none;
-  transition:0.3s;
-}
-
-.btn:hover {
-  transform:scale(1.1);
 }
 
 .section {
-  max-width:1000px;
-  margin:auto;
   padding:40px 20px;
   text-align:center;
-}
-
-.box {
-  background:white;
-  border-radius:15px;
-  padding:20px;
-  margin:20px 0;
-  box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
 .jobs {
@@ -85,21 +44,16 @@ body {
 
 .job {
   background:white;
-  border-radius:15px;
-  overflow:hidden;
-  transition:0.3s;
+  padding:10px;
+  border-radius:10px;
   box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
-
-.job:hover {
-  transform:translateY(-5px);
-  box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
 
 .job img {
   width:100%;
   height:150px;
   object-fit:cover;
+  border-radius:10px;
 }
 
 .gallery {
@@ -115,16 +69,25 @@ body {
   border-radius:10px;
 }
 
-.call-btn, .zalo-btn {
+.call-btn {
   position:fixed;
+  bottom:20px;
   right:20px;
+  background:red;
+  color:white;
   padding:15px;
   border-radius:50%;
-  color:white;
 }
 
-.call-btn {bottom:20px;background:red;}
-.zalo-btn {bottom:80px;background:#0084ff;}
+.zalo-btn {
+  position:fixed;
+  bottom:80px;
+  right:20px;
+  background:#0084ff;
+  color:white;
+  padding:15px;
+  border-radius:50%;
+}
 
 .footer {
   background:#111;
@@ -132,89 +95,155 @@ body {
   text-align:center;
   padding:20px;
 }
-
-html {scroll-behavior:smooth;}
 </style>
 </head>
 
 <body>
 
-<!-- MENU -->
-<div class="navbar">
-  <div><b>SG JOB</b></div>
-  <div>
-    <a href="#">Trang chủ</a>
-    <a href="#jobs">Công việc</a>
-    <a href="#form">Đăng ký</a>
-  </div>
+<div style="background:#ff0000;color:white;text-align:center;padding:8px;font-weight:bold;">
+🔥 Hôm nay đã có 23 người đăng ký thành công
 </div>
 
-<!-- HEADER -->
 <div class="header">
   <h1>VIỆC LÀM SINGAPORE 24H</h1>
-  <p>Lương cao - Xuất cảnh nhanh</p>
+  <p>Uy tín - Nhanh chóng - Thu nhập cao</p>
   <a href="#form" class="btn">Đăng ký ngay</a>
 </div>
 
-<!-- JOB -->
-<div class="section" id="jobs">
-  <div class="box">
-    <h2>🔥 Công việc đang tuyển</h2>
-    <div class="jobs">
-      <div class="job"><img src="phubep.jpg"><p>Phụ bếp</p></div>
-      <div class="job"><img src="phucvu.jpg"><p>Phục vụ</p></div>
-      <div class="job"><img src="massage.jpg"><p>Massage</p></div>
-      <div class="job"><img src="nail.jpg"><p>Nail</p></div>
-    </div>
-  </div>
+<div style="text-align:center;color:red;font-weight:bold;margin-top:10px;">
+👁️ Có <span id="viewers">25</span> người đang xem
 </div>
 
-<!-- LỢI ÍCH -->
+<script>
+setInterval(()=>{
+  document.getElementById("viewers").innerText =
+  Math.floor(Math.random()*20)+20;
+},3000);
+</script>
+
 <div class="section">
-  <div class="box">
-    <h2>🎯 Lợi ích khi đi Singapore</h2>
-    <p>✔ Lương 30 - 45 triệu</p>
-    <p>✔ Có tăng ca</p>
-    <p>✔ Hợp đồng rõ ràng</p>
+  <h2>🔥 Công việc đang tuyển</h2>
+  <div class="jobs">
+    <div class="job"><img src="phubep.jpg"><p>Phụ bếp</p></div>
+    <div class="job"><img src="phucvu.jpg"><p>Phục vụ nhà hàng</p></div>
+    <div class="job"><img src="massage.jpg"><p>Massage</p></div>
+    <div class="job"><img src="nail.jpg"><p>Spa - Nail - Mi</p></div>
+    <div class="job"><img src="ruabat.jpg"><p>Rửa bát</p></div>
+    <div class="job"><img src="moc.jpg"><p>Mộc nội thất</p></div>
+    <div class="job"><img src="dondep.jpg"><p>Dọn dẹp khách sạn</p></div>
+    <div class="job"><img src="xaydung.jpg"><p>Xây dựng</p></div>
   </div>
 </div>
 
-<!-- GALLERY -->
 <div class="section">
-  <div class="box">
-    <h2>📸 Hình ảnh thực tế</h2>
-    <div class="gallery">
-      <img src="anh1.jpg">
-      <img src="anh2.jpg">
-      <img src="anh3.jpg">
-    </div>
+  <h2>🛂 Visa hỗ trợ</h2>
+  <p>SPass - WP - TEP</p>
+</div>
+
+<div class="section">
+  <h2>🇸🇬 Những điều cần biết</h2>
+  <p>✔ Tuổi 18-45, sức khỏe tốt</p>
+  <p>✔ Lương 30 - 45 triệu/tháng</p>
+  <p>✔ Có tăng ca, thưởng</p>
+  <p>✔ Hợp đồng rõ ràng</p>
+</div>
+
+<div class="section" style="background:#e6f7ff;border-radius:15px;margin:20px;">
+  <h2>📚 Đào tạo ngoại ngữ trước khi xuất cảnh</h2>
+  <p>✔ Hỗ trợ đào tạo tiếng Trung & tiếng Anh</p>
+  <p>✔ Học từ cơ bản đến giao tiếp</p>
+  <p>✔ Tăng cơ hội trúng tuyển đơn lương cao</p>
+</div>
+
+<div class="section">
+  <h2>🎯 Vì sao nên đi Singapore ngay?</h2>
+  <p>✔ Lương cao hơn Việt Nam 2-3 lần</p>
+  <p>✔ Cơ hội đổi đời nhanh</p>
+  <p>✔ Nhiều người đã thành công</p>
+</div>
+
+<div class="section" style="background:#fff3cd;border-radius:15px;margin:20px;">
+  <h2 style="color:red;">🔥 ĐĂNG KÝ NGAY - SỐ LƯỢNG CÓ HẠN</h2>
+  <p>⚠️ Mỗi tháng chỉ nhận 50 hồ sơ</p>
+  <a href="#form" class="btn">GIỮ SUẤT NGAY</a>
+</div>
+
+<div class="section">
+  <h2>💬 Khách hàng nói gì</h2>
+  <p>⭐⭐⭐⭐⭐ "Đi nhanh, uy tín" – Anh Nam</p>
+  <p>⭐⭐⭐⭐⭐ "Có việc ngay" – Chị Hương</p>
+</div>
+
+<div class="section" style="background:#000;color:white;border-radius:15px;margin:20px;">
+  <h2>⏰ Ưu đãi kết thúc sau:</h2>
+  <h1 id="countdown">10:00</h1>
+</div>
+
+<script>
+let time = 600;
+setInterval(()=>{
+  let m = Math.floor(time/60);
+  let s = time%60;
+  document.getElementById("countdown").innerText =
+    m + ":" + (s<10?"0":"") + s;
+  if(time>0) time--;
+},1000);
+</script>
+
+<div class="section" style="background:#ffe6e6;border-radius:15px;margin:20px;">
+  <h2 style="color:red;">⚠️ Cảnh báo lừa đảo</h2>
+  <p>❌ Không chuyển tiền khi chưa có hợp đồng</p>
+  <p>✔ Cam kết minh bạch</p>
+</div>
+
+<div class="section">
+  <h2>📸 Hình ảnh thực tế</h2>
+  <div class="gallery">
+    <img src="anh1.jpg">
+    <img src="anh2.jpg">
+    <img src="anh3.jpg">
+    <img src="anh4.jpg">
+    <img src="anh5.jpg">
   </div>
 </div>
 
-<!-- FORM -->
-<div class="section" id="form">
-  <div class="box">
+<div class="section" id="form" style="background:#ffffff;border-radius:15px;margin:20px;box-shadow:0 5px 15px rgba(0,0,0,0.1);">
 
-    <div style="background:red;color:white;padding:10px;border-radius:10px;">
-      ⚠️ Chỉ còn vài suất hôm nay
-    </div>
-
-    <h2>📩 Đăng ký tư vấn</h2>
-
-    <form action="https://formspree.io/f/xpqogqva" method="POST">
-      <input type="text" name="name" placeholder="Họ tên" required style="width:90%;padding:10px;margin:5px;">
-      <input type="text" name="phone" placeholder="SĐT" required style="width:90%;padding:10px;margin:5px;">
-      <button class="btn">Gửi ngay</button>
-    </form>
-
-  </div>
+<div style="background:#ff0000;color:white;padding:15px;border-radius:10px;margin-bottom:15px;">
+<b>⚠️ CHỈ CÒN 7 SUẤT CUỐI HÔM NAY</b><br>
+⏳ Đăng ký ngay để giữ chỗ
 </div>
+
+<h2 style="color:#d60000;">📩 Đăng ký tư vấn miễn phí</h2>
+
+<form action="https://formspree.io/f/xpqogqva" method="POST">
+<input type="text" name="name" placeholder="Họ và tên" required style="width:90%;padding:12px;margin:8px;">
+<input type="text" name="phone" placeholder="Số điện thoại" required style="width:90%;padding:12px;margin:8px;">
+<button type="submit" style="width:95%;padding:12px;background:red;color:white;font-weight:bold;border:none;">
+🚀 Gửi ngay
+</button>
+</form>
+
+</div>
+
+<div id="popup" style="position:fixed;bottom:20px;left:20px;background:white;padding:15px;border-radius:10px;display:none;">
+🔥 Có người vừa đăng ký
+</div>
+
+<script>
+setTimeout(()=>{document.getElementById("popup").style.display="block";},5000);
+setInterval(()=>{
+const names=["Nam","Huy","Linh","Tuấn"];
+document.getElementById("popup").innerHTML="🔥 "+names[Math.floor(Math.random()*names.length)]+" vừa đăng ký";
+},8000);
+</script>
 
 <a href="tel:0369759879" class="call-btn">📞</a>
 <a href="https://zalo.me/0369759879" class="zalo-btn">💬</a>
 
 <div class="footer">
-  Hotline: 0369759879
+  <p>Hotline: 0369759879</p>
+  <p>1000+ người đã xuất cảnh</p>
 </div>
 
 </body>
