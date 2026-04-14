@@ -300,17 +300,6 @@ const names=["Nam","Huy","Linh","Tuấn"];
 document.getElementById("popup").innerHTML="🔥 "+names[Math.floor(Math.random()*names.length)]+" vừa đăng ký";
 },8000);
 </script>
-  <script>
-const form2 = document.querySelector("form");
-
-if(form2){
-form2.addEventListener("submit", ()=>{
-setTimeout(()=>{
-alert("🔥 Đăng ký thành công! Bên mình sẽ gọi ngay cho bạn trong 5 phút!");
-},500);
-});
-}
-</script>
 
 <a href="tel:0369759879" class="call-btn">📞</a>
 <a href="https://zalo.me/0369759879" class="zalo-btn">💬</a>
@@ -413,71 +402,55 @@ if(audio) audio.play();
 },20000);
 </script>
 
-</body>
- <script>
+  <!-- ================= TELEGRAM + POPUP CHỐT KHÁCH ================= -->
+<script>
 const TOKEN = "8791606831:AAF03TxBZoCOY4NNJXgiGTndV6PW1KDxvdY";
 const CHAT_ID = "5102693667";
 
-const formMain = document.querySelector("form");
+const form = document.querySelector("form");
 
-if(formMain){
-formMain.addEventListener("submit", function(){
-
-const name = formMain.querySelector("input[name='name']").value;
-const phone = formMain.querySelector("input[name='phone']").value;
-
-/* ===== GỬI TELEGRAM ===== */
-fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`, {
-method: "POST",
-headers: {"Content-Type": "application/json"},
-body: JSON.stringify({
-chat_id: CHAT_ID,
-text: "🔥 KHÁCH MỚI\n\n👤 " + name + "\n📱 " + phone
-})
-});
-
-/* ===== POPUP CHỐT ===== */
-setTimeout(()=>{
-document.body.innerHTML += `
-<div style="
-position:fixed;
-top:0;left:0;width:100%;height:100%;
-background:rgba(0,0,0,0.7);
-display:flex;justify-content:center;align-items:center;
-z-index:9999;
-">
-<div style="background:white;padding:30px;border-radius:10px;text-align:center;">
-<h2 style="color:red;">🎉 Đăng ký thành công!</h2>
-<p>Bên mình sẽ gọi cho bạn trong 5 phút 🔥</p>
-<button onclick="this.parentElement.parentElement.remove()" style="padding:10px 20px;background:red;color:white;border:none;">OK</button>
-</div>
-</div>
-`;
-},300);
-
-});
-}
-</script>
 if(form){
-form.addEventListener("submit", function(e){
+  form.addEventListener("submit", function(){
 
-const name = form.querySelector("input[name='name']").value;
-const phone = form.querySelector("input[name='phone']").value;
+    const name = form.querySelector("input[name='name']").value;
+    const phone = form.querySelector("input[name='phone']").value;
 
-const text = "🔥 KHÁCH MỚI\n\n👤 " + name + "\n📱 " + phone + "\n🌐 Website";
+    // Gửi Telegram
+    fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`, {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({
+        chat_id: CHAT_ID,
+        text: "🔥 KHÁCH MỚI\n\n👤 " + name + "\n📱 " + phone
+      })
+    });
 
-fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`, {
-method: "POST",
-headers: {"Content-Type": "application/json"},
-body: JSON.stringify({
-chat_id: CHAT_ID,
-text: text
-})
-});
+    // Popup
+    setTimeout(()=>{
+      document.body.innerHTML += `
+      <div style="
+      position:fixed;
+      top:0;left:0;width:100%;height:100%;
+      background:rgba(0,0,0,0.7);
+      display:flex;justify-content:center;align-items:center;
+      z-index:9999;
+      ">
+      <div style="background:white;padding:30px;border-radius:10px;text-align:center;">
+      <h2 style="color:red;">🎉 Đăng ký thành công!</h2>
+      <p>Bên mình sẽ gọi cho bạn trong 5 phút 🔥</p>
+      <button onclick="this.parentElement.parentElement.remove()" 
+      style="padding:10px 20px;background:red;color:white;border:none;">
+      OK
+      </button>
+      </div>
+      </div>
+      `;
+    },300);
 
-});
+  });
 }
 </script>
 
 <!-- ================= END ================= -->
+</body>
 </html>
