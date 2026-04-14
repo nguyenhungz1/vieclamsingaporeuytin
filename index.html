@@ -12,6 +12,7 @@ body {
   background:#f5f7fb;
 }
 
+/* HEADER */
 .header {
   background: linear-gradient(45deg,#d60000,#ff3c3c);
   color:white;
@@ -20,22 +21,30 @@ body {
 }
 
 .header h1 {margin:0;font-size:36px;}
+
+/* BUTTON */
 .btn {
   display:inline-block;
   margin-top:20px;
   padding:12px 25px;
-  background:yellow;
+  background:linear-gradient(45deg,#ffd700,#ffae00);
   color:black;
   font-weight:bold;
   border-radius:30px;
   text-decoration:none;
+  transition:0.3s;
+}
+.btn:hover {
+  transform:scale(1.1);
 }
 
+/* SECTION */
 .section {
   padding:40px 20px;
   text-align:center;
 }
 
+/* JOB */
 .jobs {
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
@@ -45,8 +54,14 @@ body {
 .job {
   background:white;
   padding:10px;
-  border-radius:10px;
+  border-radius:15px;
   box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+
+.job:hover {
+  transform:translateY(-7px);
+  box-shadow:0 15px 30px rgba(0,0,0,0.2);
 }
 
 .job img {
@@ -56,6 +71,7 @@ body {
   border-radius:10px;
 }
 
+/* GALLERY */
 .gallery {
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -69,6 +85,7 @@ body {
   border-radius:10px;
 }
 
+/* FLOAT BUTTON */
 .call-btn {
   position:fixed;
   bottom:20px;
@@ -89,12 +106,16 @@ body {
   border-radius:50%;
 }
 
+/* FOOTER */
 .footer {
   background:#111;
   color:white;
   text-align:center;
   padding:20px;
 }
+
+/* SMOOTH */
+html {scroll-behavior:smooth;}
 </style>
 </head>
 
@@ -121,6 +142,7 @@ setInterval(()=>{
 },3000);
 </script>
 
+<!-- JOB -->
 <div class="section">
   <h2>🔥 Công việc đang tuyển</h2>
   <div class="jobs">
@@ -135,19 +157,31 @@ setInterval(()=>{
   </div>
 </div>
 
+<!-- VISA -->
 <div class="section">
   <h2>🛂 Visa hỗ trợ</h2>
   <p>SPass - WP - TEP</p>
 </div>
 
+<!-- INFO -->
 <div class="section">
   <h2>🇸🇬 Những điều cần biết</h2>
   <p>✔ Tuổi 18-45, sức khỏe tốt</p>
   <p>✔ Lương 30 - 45 triệu/tháng</p>
   <p>✔ Có tăng ca, thưởng</p>
   <p>✔ Hợp đồng rõ ràng</p>
+
+  <!-- CAM KẾT -->
+  <div style="background:#fff;border-radius:15px;padding:20px;margin-top:20px;box-shadow:0 5px 15px rgba(0,0,0,0.1);">
+    <h3>✅ Cam kết của chúng tôi</h3>
+    <p>✔ Có hợp đồng rõ ràng trước khi đi</p>
+    <p>✔ Không phát sinh chi phí</p>
+    <p>✔ Hỗ trợ đến khi có việc</p>
+    <p>✔ Minh bạch - uy tín</p>
+  </div>
 </div>
 
+<!-- NGOẠI NGỮ -->
 <div class="section" style="background:#e6f7ff;border-radius:15px;margin:20px;">
   <h2>📚 Đào tạo ngoại ngữ trước khi xuất cảnh</h2>
   <p>✔ Hỗ trợ đào tạo tiếng Trung & tiếng Anh</p>
@@ -155,6 +189,7 @@ setInterval(()=>{
   <p>✔ Tăng cơ hội trúng tuyển đơn lương cao</p>
 </div>
 
+<!-- LÝ DO -->
 <div class="section">
   <h2>🎯 Vì sao nên đi Singapore ngay?</h2>
   <p>✔ Lương cao hơn Việt Nam 2-3 lần</p>
@@ -162,18 +197,21 @@ setInterval(()=>{
   <p>✔ Nhiều người đã thành công</p>
 </div>
 
+<!-- CTA -->
 <div class="section" style="background:#fff3cd;border-radius:15px;margin:20px;">
   <h2 style="color:red;">🔥 ĐĂNG KÝ NGAY - SỐ LƯỢNG CÓ HẠN</h2>
   <p>⚠️ Mỗi tháng chỉ nhận 50 hồ sơ</p>
   <a href="#form" class="btn">GIỮ SUẤT NGAY</a>
 </div>
 
+<!-- FEEDBACK -->
 <div class="section">
   <h2>💬 Khách hàng nói gì</h2>
   <p>⭐⭐⭐⭐⭐ "Đi nhanh, uy tín" – Anh Nam</p>
   <p>⭐⭐⭐⭐⭐ "Có việc ngay" – Chị Hương</p>
 </div>
 
+<!-- COUNTDOWN -->
 <div class="section" style="background:#000;color:white;border-radius:15px;margin:20px;">
   <h2>⏰ Ưu đãi kết thúc sau:</h2>
   <h1 id="countdown">10:00</h1>
@@ -190,12 +228,14 @@ setInterval(()=>{
 },1000);
 </script>
 
+<!-- CẢNH BÁO -->
 <div class="section" style="background:#ffe6e6;border-radius:15px;margin:20px;">
   <h2 style="color:red;">⚠️ Cảnh báo lừa đảo</h2>
   <p>❌ Không chuyển tiền khi chưa có hợp đồng</p>
   <p>✔ Cam kết minh bạch</p>
 </div>
 
+<!-- GALLERY -->
 <div class="section">
   <h2>📸 Hình ảnh thực tế</h2>
   <div class="gallery">
@@ -207,6 +247,17 @@ setInterval(()=>{
   </div>
 </div>
 
+<!-- QUY TRÌNH -->
+<div class="section">
+  <h2>📋 Quy trình đi Singapore</h2>
+  <p>1️⃣ Đăng ký tư vấn</p>
+  <p>2️⃣ Chọn đơn phù hợp</p>
+  <p>3️⃣ Đào tạo (nếu cần)</p>
+  <p>4️⃣ Ký hợp đồng</p>
+  <p>5️⃣ Xuất cảnh</p>
+</div>
+
+<!-- FORM -->
 <div class="section" id="form" style="background:#ffffff;border-radius:15px;margin:20px;box-shadow:0 5px 15px rgba(0,0,0,0.1);">
 
 <div style="background:#ff0000;color:white;padding:15px;border-radius:10px;margin-bottom:15px;">
@@ -226,7 +277,19 @@ setInterval(()=>{
 
 </div>
 
-<div id="popup" style="position:fixed;bottom:20px;left:20px;background:white;padding:15px;border-radius:10px;display:none;">
+<!-- POPUP -->
+<div id="popup" style="
+position:fixed;
+bottom:20px;
+left:20px;
+background:white;
+padding:15px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+display:none;
+max-width:250px;
+z-index:999;
+">
 🔥 Có người vừa đăng ký
 </div>
 
