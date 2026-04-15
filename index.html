@@ -490,5 +490,108 @@ if(form){
 </script>
 <!-- ====== END NÂNG CẤP ====== -->
 <!-- ================= END ================= -->
+  <!-- ====== LEVEL MAX UPGRADE ====== -->
+
+<!-- FAKE LOCATION NOTIFY -->
+<script>
+const cities = ["Hà Nội","TP.HCM","Đà Nẵng","Bắc Ninh","Hải Phòng","Thanh Hóa"];
+
+setInterval(()=>{
+  const names = ["Nam","Huy","Linh","Tuấn","Hà","Dũng"];
+  const city = cities[Math.floor(Math.random()*cities.length)];
+  const name = names[Math.floor(Math.random()*names.length)];
+
+  let popup = document.getElementById("popup");
+  if(popup){
+    popup.innerHTML = `🔥 ${name} (${city}) vừa đăng ký`;
+  }
+},7000);
+</script>
+
+<!-- PROGRESS BAR FOMO -->
+<div id="fomo-bar" style="
+position:fixed;
+top:0;
+left:0;
+height:5px;
+background:red;
+width:10%;
+z-index:9999;
+"></div>
+
+<script>
+let progress = 10;
+setInterval(()=>{
+  if(progress < 95){
+    progress += Math.random()*5;
+    document.getElementById("fomo-bar").style.width = progress + "%";
+  }
+},3000);
+</script>
+
+<!-- EXIT POPUP -->
+<script>
+let showed = false;
+
+document.addEventListener("mouseout", function(e){
+  if(e.clientY < 10 && !showed){
+    showed = true;
+
+    document.body.innerHTML += `
+    <div style="
+    position:fixed;
+    top:0;left:0;width:100%;height:100%;
+    background:rgba(0,0,0,0.7);
+    display:flex;justify-content:center;align-items:center;
+    z-index:999999;
+    ">
+    <div style="background:white;padding:25px;border-radius:15px;text-align:center;">
+      <h2 style="color:red;">⚠️ ĐỪNG BỎ LỠ!</h2>
+      <p>Chỉ còn vài suất cuối hôm nay 🔥</p>
+      <button onclick="
+      document.getElementById('form').scrollIntoView({behavior:'smooth'});
+      this.parentElement.parentElement.remove();
+      " 
+      style="padding:10px 20px;background:red;color:white;border:none;">
+      GIỮ SUẤT NGAY
+      </button>
+    </div>
+    </div>
+    `;
+  }
+});
+</script>
+
+<!-- AUTO FOCUS FORM -->
+<script>
+setTimeout(()=>{
+  const input = document.querySelector("input[name='name']");
+  if(input){
+    input.focus();
+  }
+},8000);
+</script>
+
+<!-- BUTTON SHAKE FORM -->
+<style>
+button[type="submit"]{
+animation: shake 1.5s infinite;
+}
+@keyframes shake{
+0%{transform:scale(1)}
+50%{transform:scale(1.05)}
+100%{transform:scale(1)}
+}
+</style>
+
+<!-- TRACK USER SCROLL -->
+<script>
+window.addEventListener("scroll", ()=>{
+  let scroll = window.scrollY;
+  console.log("User scroll:", scroll);
+});
+</script>
+
+<!-- ====== END LEVEL MAX ====== -->
 </body>
 </html>
