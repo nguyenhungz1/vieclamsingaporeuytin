@@ -267,12 +267,31 @@ setInterval(()=>{
 
 <h2 style="color:#d60000;">📩 Đăng ký tư vấn miễn phí</h2>
 
-<form action="https://formspree.io/f/xpqogqva" method="POST">
+<form id="leadForm" action="https://formspree.io/f/xpqogqva" method="POST">
+
 <input type="text" name="name" placeholder="Họ và tên" required style="width:90%;padding:12px;margin:8px;">
+
 <input type="text" name="phone" placeholder="Số điện thoại" required style="width:90%;padding:12px;margin:8px;">
-<button type="submit" style="width:95%;padding:12px;background:red;color:white;font-weight:bold;border:none;">
-🚀 Gửi ngay
+
+<select name="job" style="width:90%;padding:12px;margin:8px;">
+<option>Chọn công việc</option>
+<option>Phụ bếp</option>
+<option>Phục vụ</option>
+<option>Spa - Nail</option>
+<option>Xây dựng</option>
+</select>
+
+<select name="budget" style="width:90%;padding:12px;margin:8px;">
+<option>Khả năng tài chính</option>
+<option>20 - 50 triệu</option>
+<option>50 - 100 triệu</option>
+<option>Trên 100 triệu</option>
+</select>
+
+<button type="submit" style="width:95%;padding:14px;background:red;color:white;font-weight:bold;border:none;">
+🚀 ĐĂNG KÝ NGAY
 </button>
+
 </form>
 
 </div>
