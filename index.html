@@ -3,148 +3,167 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Việc Làm Singapore - Thu Nhập 40tr+</title>
+<title>Việc Làm Singapore 24H</title>
 
 <style>
-body{margin:0;font-family:Arial;background:#f5f7fb;}
-.header{background:#d60000;color:white;text-align:center;padding:40px;}
-.section{padding:30px;text-align:center;}
-.btn{background:#ffd700;color:black;padding:12px 25px;border-radius:30px;text-decoration:none;font-weight:bold;}
-.box{background:white;padding:20px;border-radius:15px;box-shadow:0 5px 15px rgba(0,0,0,0.1);margin:15px;}
-input,select{width:90%;padding:12px;margin:8px;}
-button{width:95%;padding:14px;background:red;color:white;font-weight:bold;border:none;border-radius:8px;}
-.footer{background:#111;color:white;text-align:center;padding:20px;}
+body {margin:0;font-family:Arial;background:#f5f7fb;}
+
+.header {
+  background: linear-gradient(45deg,#d60000,#ff3c3c);
+  color:white;text-align:center;padding:50px 20px;
+}
+
+.btn {
+  display:inline-block;margin-top:20px;
+  padding:12px 25px;
+  background:linear-gradient(45deg,#ffd700,#ffae00);
+  color:black;font-weight:bold;
+  border-radius:30px;text-decoration:none;
+}
+
+.section {padding:40px 20px;text-align:center;}
+
+.jobs {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:15px;
+}
+
+.job {
+  background:white;padding:10px;border-radius:15px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.gallery {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:10px;
+}
+
+.call-btn,.zalo-btn {
+  position:fixed;right:20px;
+  color:white;padding:15px;border-radius:50%;
+}
+.call-btn{bottom:20px;background:red;}
+.zalo-btn{bottom:80px;background:#0084ff;}
+
+.footer {background:#111;color:white;text-align:center;padding:20px;}
+
+html{scroll-behavior:smooth;}
+
+button[type="submit"]{
+animation:shake 1.5s infinite;
+}
+@keyframes shake{
+0%{transform:scale(1)}
+50%{transform:scale(1.05)}
+100%{transform:scale(1)}
+}
 </style>
-
-<!-- FACEBOOK PIXEL -->
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-n.queue=[];t=b.createElement(e);t.async=true;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', 'YOUR_PIXEL_ID');
-fbq('track', 'PageView');
-</script>
-
 </head>
 
 <body>
 
-<!-- FOMO SLOT -->
-<div style="background:#fff3cd;padding:10px;text-align:center;font-weight:bold;color:red;">
-🔥 CHỈ NHẬN 50 HỒ SƠ / THÁNG – CÒN <span id="slot">7</span> SUẤT
+<div style="background:#ff0000;color:white;text-align:center;padding:8px;">
+🔥 Hôm nay đã có 23 người đăng ký
 </div>
 
-<!-- HEADER -->
 <div class="header">
-<h1>🇸🇬 VIỆC LÀM SINGAPORE</h1>
+<h1>VIỆC LÀM SINGAPORE 24H</h1>
 <p>Thu nhập 30 - 45 triệu/tháng</p>
 <a href="#form" class="btn">Đăng ký ngay</a>
 </div>
 
-<!-- LỢI ÍCH -->
-<div class="section">
-<h2>💰 Quyền lợi</h2>
-<div class="box">
-✔ Lương 30 - 45 triệu<br>
-✔ Có tăng ca + thưởng<br>
-✔ Hợp đồng rõ ràng<br>
-✔ Xuất cảnh nhanh
-</div>
+<div style="text-align:center;color:red;margin-top:10px;">
+👁️ Có <span id="viewers">25</span> người đang xem
 </div>
 
-<!-- CÔNG VIỆC -->
+<script>
+setInterval(()=>{
+document.getElementById("viewers").innerText =
+Math.floor(Math.random()*20)+20;
+},3000);
+</script>
+
+<!-- JOB -->
 <div class="section">
 <h2>🔥 Công việc</h2>
-<div class="box">Phụ bếp - Phục vụ - Spa - Xây dựng</div>
-</div>
-
-<!-- VIDEO -->
-<div class="section">
-<h2>🎥 Hình ảnh thực tế</h2>
-<iframe width="100%" height="220"
-src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-frameborder="0" allowfullscreen></iframe>
-</div>
-
-<!-- FEEDBACK -->
-<div class="section">
-<h2>💬 Khách hàng đã đi</h2>
-<div class="box">
-⭐⭐⭐⭐⭐ "Đi nhanh, hỗ trợ tốt" – Anh Nam<br>
-⭐⭐⭐⭐⭐ "Có việc ngay" – Chị Hương
-</div>
-</div>
-
-<!-- QUY TRÌNH -->
-<div class="section">
-<h2>📋 Quy trình</h2>
-<div class="box">
-1️⃣ Đăng ký<br>
-2️⃣ Chọn đơn<br>
-3️⃣ Ký hợp đồng<br>
-4️⃣ Xuất cảnh
+<div class="jobs">
+<div class="job">Phụ bếp</div>
+<div class="job">Phục vụ</div>
+<div class="job">Spa</div>
+<div class="job">Xây dựng</div>
 </div>
 </div>
 
 <!-- FORM -->
 <div class="section" id="form">
-<h2>📩 Đăng ký tư vấn miễn phí</h2>
+<h2>📩 Đăng ký ngay</h2>
 
 <form id="leadForm" action="https://formspree.io/f/xpqogqva" method="POST">
 
-<input type="text" name="name" placeholder="Họ và tên" required>
-<input type="text" name="phone" placeholder="Số điện thoại" required>
+<input type="text" name="name" placeholder="Họ và tên" required style="width:90%;padding:12px;margin:8px;">
+<input type="text" name="phone" placeholder="SĐT" required style="width:90%;padding:12px;margin:8px;">
 
-<select name="job">
-<option>Chọn công việc</option>
-<option>Phụ bếp</option>
-<option>Phục vụ</option>
-<option>Spa - Nail</option>
-<option>Xây dựng</option>
-</select>
-
-<select name="budget">
-<option>Khả năng tài chính</option>
-<option>20 - 50 triệu</option>
-<option>50 - 100 triệu</option>
-<option>Trên 100 triệu</option>
-</select>
-
-<button type="submit">🚀 ĐĂNG KÝ NGAY</button>
-
-<p style="color:green;font-size:14px;">
-✔ Tư vấn miễn phí 100%<br>
-✔ Không mất phí – Không ràng buộc<br>
-✔ Bảo mật thông tin tuyệt đối
-</p>
+<button type="submit">🚀 Gửi ngay</button>
 
 </form>
 </div>
 
-<!-- FOOTER -->
-<div class="footer">
-<p>📍 Văn phòng: Hà Nội</p>
-<p>📞 Hotline: 0369759879</p>
-</div>
-
-<!-- POPUP NGƯỜI ĐĂNG KÝ -->
-<div id="popup" style="position:fixed;bottom:20px;left:20px;background:white;padding:10px;border-radius:10px;z-index:999;">
+<!-- POPUP -->
+<div id="popup" style="position:fixed;bottom:20px;left:20px;background:white;padding:15px;border-radius:10px;display:none;">
 🔥 Có người vừa đăng ký
 </div>
 
-<!-- NÚT GỌI -->
-<a href="tel:0369759879" style="position:fixed;bottom:20px;right:20px;background:red;color:white;padding:15px;border-radius:50%;z-index:9999;">📞</a>
-<a href="https://zalo.me/0369759879" style="position:fixed;bottom:80px;right:20px;background:#0084ff;color:white;padding:15px;border-radius:50%;z-index:9999;">💬</a>
+<script>
+setTimeout(()=>{popup.style.display="block"},5000);
 
-<!-- SCRIPT -->
+setInterval(()=>{
+const names=["Nam","Huy","Linh","Tuấn"];
+popup.innerHTML="🔥 "+names[Math.random()*4|0]+" vừa đăng ký";
+},7000);
+</script>
+
+<!-- FOMO BAR -->
+<div id="fomo-bar" style="position:fixed;top:0;height:5px;background:red;width:10%;"></div>
+
+<script>
+let progress=10;
+setInterval(()=>{
+if(progress<95){
+progress+=Math.random()*5;
+document.getElementById("fomo-bar").style.width=progress+"%";
+}
+},3000);
+</script>
+
+<!-- EXIT POPUP -->
+<script>
+let showed=false;
+
+document.addEventListener("mouseout",e=>{
+if(e.clientY<10 && !showed){
+showed=true;
+
+document.body.insertAdjacentHTML("beforeend",`
+<div style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);display:flex;align-items:center;justify-content:center;">
+<div style="background:white;padding:25px;border-radius:15px;text-align:center;">
+<h2>⚠️ ĐỪNG BỎ LỠ</h2>
+<p>Chỉ còn vài suất</p>
+<button onclick="this.parentElement.parentElement.remove()">OK</button>
+</div>
+</div>
+`);
+}
+});
+</script>
+
+<!-- TELEGRAM + CHỐT -->
 <script>
 (function(){
 
-const TOKEN="YOUR_TELEGRAM_TOKEN";
-const CHAT_ID="YOUR_CHAT_ID";
+const TOKEN="DÁN_TOKEN_VÀO_ĐÂY";
+const CHAT_ID="DÁN_CHAT_ID";
 
 const form=document.getElementById("leadForm");
 let isSending=false;
@@ -159,35 +178,27 @@ e.preventDefault();
 let name=form.name.value;
 let phone=form.phone.value;
 
-// TELEGRAM
 fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`,{
 method:"POST",
 headers:{"Content-Type":"application/json"},
 body:JSON.stringify({
 chat_id:CHAT_ID,
-text:"🔥 KHÁCH MỚI\n👤 "+name+"\n📱 "+phone
+text:`🔥 KHÁCH MỚI\n👤 ${name}\n📱 ${phone}`
 })
 });
 
-// TRACK FB
-if(typeof fbq!=="undefined"){fbq('track','Lead')}
-
-// POPUP
+// popup
 setTimeout(()=>{
-document.body.innerHTML+=`
-<div style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);display:flex;justify-content:center;align-items:center;">
-<div style="background:white;padding:30px;text-align:center;">
+document.body.insertAdjacentHTML("beforeend",`
+<div style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);display:flex;align-items:center;justify-content:center;">
+<div style="background:white;padding:30px;text-align:center;border-radius:15px;">
 <h2>🎉 Thành công</h2>
 <p>Sẽ gọi cho bạn ngay</p>
 <button onclick="location.reload()">OK</button>
 </div>
-</div>`;
+</div>
+`);
 },300);
-
-// AUTO GỌI
-setTimeout(()=>{
-window.location.href="tel:0369759879";
-},2000);
 
 // submit lại
 setTimeout(()=>{form.submit()},1200);
@@ -197,47 +208,12 @@ setTimeout(()=>{form.submit()},1200);
 })();
 </script>
 
-<!-- FOMO SLOT SCRIPT -->
-<script>
-let slot=7;
-setInterval(()=>{
-if(slot>1){
-slot--;
-document.getElementById("slot").innerText=slot;
-}
-},8000);
-</script>
+<a href="tel:0369759879" class="call-btn">📞</a>
+<a href="https://zalo.me/0369759879" class="zalo-btn">💬</a>
 
-<!-- FAKE SOCIAL -->
-<script>
-setInterval(()=>{
-const names=["Nam","Huy","Linh","Tuấn","Hà"];
-const cities=["Hà Nội","HCM","Đà Nẵng"];
-
-document.getElementById("popup").innerHTML=
-"🔥 "+names[Math.floor(Math.random()*names.length)]+" ("+
-cities[Math.floor(Math.random()*cities.length)]+") vừa đăng ký";
-},6000);
-</script>
-
-<!-- EXIT POPUP -->
-<script>
-let showed=false;
-document.addEventListener("mouseout",function(e){
-if(e.clientY<10 && !showed){
-showed=true;
-document.body.innerHTML+=`
-<div style="position:fixed;top:0;left:0;width:100%;height:100%;
-background:rgba(0,0,0,0.7);display:flex;justify-content:center;align-items:center;">
-<div style="background:white;padding:20px;text-align:center;">
-<h2 style="color:red;">ĐỪNG BỎ LỠ!</h2>
-<p>Còn vài suất cuối hôm nay</p>
-<button onclick="document.getElementById('form').scrollIntoView()">ĐĂNG KÝ</button>
+<div class="footer">
+<p>Hotline: 0369759879</p>
 </div>
-</div>`;
-}
-});
-</script>
 
 </body>
 </html>
