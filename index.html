@@ -440,19 +440,32 @@ let isSending = false; // 👉 thêm dòng này
 
 if(form){
 
+<script>
+(function(){
+
+const TOKEN = "8791606831:AAF03TxBZoCOY4NNJXgiGTndV6PW1KDxvdY";
+const CHAT_ID = "5102693667";
+
+const form = document.getElementById("leadForm");
+
+let isSending = false;
+
+if(form){
+
   form.addEventListener("submit", function(e){
 
-    if(isSending) return; // 👉 thêm dòng này
+    if(isSending) return;
     isSending = true;
 
-    e.preventDefault(); // chặn reload
+    // ❌ KHÔNG chặn submit nữa → form vẫn gửi về Formspree
+    // e.preventDefault();  ← XÓA DÒNG NÀY
 
     const name = form.querySelector("input[name='name']").value;
     const phone = form.querySelector("input[name='phone']").value;
 
     const text = "🔥 KHÁCH MỚI\n\n👤 " + name + "\n📱 " + phone + "\n🌐 Website";
 
-    // Gửi Telegram
+    // Gửi Telegram (không ảnh hưởng form)
     fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`, {
       method: "POST",
       headers: {"Content-Type": "application/json"},
@@ -460,7 +473,42 @@ if(form){
         chat_id: CHAT_ID,
         text: text
       })
-    });
+    }).catch(()=>{});
+
+    // Popup (không ảnh hưởng submit)
+    setTimeout(()=>{
+      document.body.innerHTML += `
+      <div style="
+      position:fixed;
+      top:0;left:0;width:100%;height:100%;
+      background:rgba(0,0,0,0.75);
+      display:flex;justify-content:center;align-items:center;
+      z-index:99999;
+      ">
+      <div style="
+      background:white;
+      padding:30px;
+      border-radius:15px;
+      text-align:center;
+      max-width:320px;
+      ">
+      <h2 style="color:red;">🎉 Đăng ký thành công!</h2>
+      <p>Bên mình sẽ gọi cho bạn trong 5 phút 🔥</p>
+      <button onclick="location.reload()" 
+      style="margin-top:10px;padding:10px 20px;background:red;color:white;border:none;border-radius:8px;">
+      OK
+      </button>
+      </div>
+      </div>
+      `;
+    },300);
+
+  });
+
+}
+
+})();
+</script>
 
     // Popup nâng cấp
     setTimeout(()=>{
