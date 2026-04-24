@@ -427,19 +427,7 @@ if(audio) audio.play();
 },20000);
 </script>
 
-<!-- ====== NÂNG CẤP AUTO CHỐT KHÁCH PRO MAX ====== -->
-<script>
-(function(){
-
-const TOKEN = "8791606831:AAF03TxBZoCOY4NNJXgiGTndV6PW1KDxvdY";
-const CHAT_ID = "5102693667";
-
-const form = document.getElementById("leadForm");
-
-let isSending = false; // 👉 thêm dòng này
-
-if(form){
-
+<!-- ====== NÂNG CẤP AUTO CHỐT KHÁCH PRO MAX (FIX FULL) ====== -->
 <script>
 (function(){
 
@@ -457,15 +445,15 @@ if(form){
     if(isSending) return;
     isSending = true;
 
-    // ❌ KHÔNG chặn submit nữa → form vẫn gửi về Formspree
-    // e.preventDefault();  ← XÓA DÒNG NÀY
+    // ❌ KHÔNG chặn submit → để Formspree gửi mail
+    // e.preventDefault();
 
     const name = form.querySelector("input[name='name']").value;
     const phone = form.querySelector("input[name='phone']").value;
 
     const text = "🔥 KHÁCH MỚI\n\n👤 " + name + "\n📱 " + phone + "\n🌐 Website";
 
-    // Gửi Telegram (không ảnh hưởng form)
+    // Gửi Telegram
     fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`, {
       method: "POST",
       headers: {"Content-Type": "application/json"},
@@ -475,7 +463,7 @@ if(form){
       })
     }).catch(()=>{});
 
-    // Popup (không ảnh hưởng submit)
+    // Popup thành công
     setTimeout(()=>{
       document.body.innerHTML += `
       <div style="
@@ -509,6 +497,7 @@ if(form){
 
 })();
 </script>
+<!-- ====== END FIX ====== -->
 
     // Popup nâng cấp
     setTimeout(()=>{
