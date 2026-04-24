@@ -436,9 +436,33 @@ const CHAT_ID = "5102693667";
 
 const form = document.getElementById("leadForm");
 
-let isSending = false;
-
 if(form){
+
+  form.addEventListener("submit", function(){
+
+    const name = form.querySelector("input[name='name']").value;
+    const phone = form.querySelector("input[name='phone']").value;
+
+    // Gửi Telegram (không ảnh hưởng mail)
+    fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`, {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({
+        chat_id: CHAT_ID,
+        text: "🔥 KHÁCH MỚI\n👤 " + name + "\n📱 " + phone
+      })
+    }).catch(()=>{});
+
+    // KHÔNG preventDefault
+    // KHÔNG submit lại
+    // → Formspree vẫn gửi mail bình thường
+
+  });
+
+}
+
+})();
+</script>
 
   form.addEventListener("submit", function(e){
 
